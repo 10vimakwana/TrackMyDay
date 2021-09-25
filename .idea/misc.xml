@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/AndroidStudioProjects/app/src/main/res/layout/fragment_gallery.xml" value="0.14375" />
+        <entry key="..\:/AndroidStudioProjects/app/src/main/res/layout/layout_user_list.xml" value="0.14375" />
+        <entry key="..\:/App/Tushar/TrackMyDay/app/src/main/res/drawable/ic_search.xml" value="0.2203125" />
+        <entry key="..\:/App/Tushar/TrackMyDay/app/src/main/res/layout/activity_add_food.xml" value="0.11277173913043478" />
+        <entry key="..\:/App/Tushar/TrackMyDay/app/src/main/res/layout/activity_admin.xml" value="0.18206521739130435" />
+        <entry key="..\:/App/Tushar/TrackMyDay/app/src/main/res/layout/activity_dashboard.xml" value="0.10597826086956522" />
+        <entry key="..\:/App/Tushar/TrackMyDay/app/src/main/res/layout/activity_food_detail.xml" value="0.18206521739130435" />
+        <entry key="..\:/App/Tushar/TrackMyDay/app/src/main/res/layout/activity_food_edit.xml" value="0.18659420289855072" />
+        <entry key="..\:/App/Tushar/TrackMyDay/app/src/main/res/layout/activity_login.xml" value="0.19067028985507245" />
+        <entry key="..\:/App/Tushar/TrackMyDay/app/src/main/res/layout/activity_profile_user.xml" value="0.10960144927536232" />
+        <entry key="..\:/App/Tushar/TrackMyDay/app/src/main/res/layout/activity_registration.xml" value="0.17300724637681159" />
+        <entry key="..\:/App/Tushar/TrackMyDay/app/src/main/res/layout/activity_user_detail.xml" value="0.18206521739130435" />
+        <entry key="..\:/App/Tushar/TrackMyDay/app/src/main/res/layout/app_bar_admin.xml" value="0.10960144927536232" />
+        <entry key="..\:/App/Tushar/TrackMyDay/app/src/main/res/layout/content_dashboard.xml" value="0.10960144927536232" />
+        <entry key="..\:/App/Tushar/TrackMyDay/app/src/main/res/layout/fragment_all_feedback.xml" value="0.16802536231884058" />
+        <entry key="..\:/App/Tushar/TrackMyDay/app/src/main/res/layout/fragment_alluser.xml" value="0.1" />
+        <entry key="..\:/App/Tushar/TrackMyDay/app/src/main/res/layout/fragment_dashboard.xml" value="0.18206521739130435" />
+        <entry key="..\:/App/Tushar/TrackMyDay/app/src/main/res/layout/fragment_feedback.xml" value="0.25" />
+        <entry key="..\:/App/Tushar/TrackMyDay/app/src/main/res/layout/fragment_food.xml" value="0.17300724637681159" />
+        <entry key="..\:/App/Tushar/TrackMyDay/app/src/main/res/layout/fragment_gallery.xml" value="0.19067028985507245" />
+        <entry key="..\:/App/Tushar/TrackMyDay/app/src/main/res/layout/fragment_home.xml" value="0.18659420289855072" />
+        <entry key="..\:/App/Tushar/TrackMyDay/app/src/main/res/layout/fragment_user_home.xml" value="0.17300724637681159" />
+        <entry key="..\:/App/Tushar/TrackMyDay/app/src/main/res/layout/layout_all_feedback.xml" value="0.16802536231884058" />
+        <entry key="..\:/App/Tushar/TrackMyDay/app/src/main/res/layout/layout_all_user.xml" value="0.16304347826086957" />
+        <entry key="..\:/App/Tushar/TrackMyDay/app/src/main/res/layout/layout_food_list.xml" value="0.18206521739130435" />
+        <entry key="..\:/App/Tushar/TrackMyDay/app/src/main/res/layout/layout_user_list.xml" value="0.18206521739130435" />
+        <entry key="..\:/App/Tushar/TrackMyDay/app/src/main/res/layout/nav_header_admin.xml" value="0.16802536231884058" />
+        <entry key="..\:/App/Tushar/TrackMyDay/app/src/main/res/layout/nav_header_dashboard.xml" value="0.19067028985507245" />
+        <entry key="..\:/App/Tushar/TrackMyDay/app/src/main/res/menu/activity_dashboard_drawer.xml" value="0.20416666666666666" />
+        <entry key="..\:/App/Tushar/TrackMyDay/app/src/main/res/menu/activity_main_drawer.xml" value="0.20416666666666666" />
+        <entry key="..\:/App/Tushar/TrackMyDay/app/src/main/res/menu/admin.xml" value="0.20416666666666666" />
+        <entry key="..\:/App/Tushar/TrackMyDay/app/src/main/res/menu/food_menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/App/Tushar/TrackMyDay/app/src/main/res/menu/user.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/IIBIT/AndroidStudioProjects/adminapp/src/main/res/layout/activity_add_food_item.xml" value="0.33" />
+        <entry key="..\:/Users/IIBIT/AndroidStudioProjects/adminapp/src/main/res/layout/activity_admin_dashboard.xml" value="0.33" />
+        <entry key="..\:/Users/IIBIT/AndroidStudioProjects/adminapp/src/main/res/layout/activity_admin_login.xml" value="0.33" />
+        <entry key="..\:/Users/IIBIT/AndroidStudioProjects/adminapp/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="..\:/Users/IIBIT/AndroidStudioProjects/adminapp/src/main/res/layout/activity_view_users.xml" value="0.23854166666666668" />
+        <entry key="..\:/Users/IIBIT/AndroidStudioProjects/userapp/src/main/res/drawable/rounded_color.xml" value="0.3828125" />
+        <entry key="..\:/Users/IIBIT/AndroidStudioProjects/userapp/src/main/res/layout/activity_about_us.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/IIBIT/AndroidStudioProjects/userapp/src/main/res/layout/activity_add.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/IIBIT/AndroidStudioProjects/userapp/src/main/res/layout/activity_enter_meal.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/IIBIT/AndroidStudioProjects/userapp/src/main/res/layout/activity_feedback.xml" value="0.35260416666666666" />
+        <entry key="..\:/Users/IIBIT/AndroidStudioProjects/userapp/src/main/res/layout/activity_main.xml" value="0.10833333333333334" />
+        <entry key="..\:/Users/IIBIT/AndroidStudioProjects/userapp/src/main/res/layout/activity_user_dashboard.xml" value="0.33" />
+        <entry key="..\:/Users/IIBIT/AndroidStudioProjects/userapp/src/main/res/layout/activity_user_login.xml" value="0.2916666666666667" />
+        <entry key="..\:/Users/IIBIT/AndroidStudioProjects/userapp/src/main/res/layout/activity_user_registration.xml" value="0.25" />
+        <entry key="..\:/Users/IIBIT/AndroidStudioProjects/userapp/src/main/res/layout/activity_view_chart.xml" value="0.36666666666666664" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/AndroidStudioProjects/adminapp/src/main/res/layout/content_dashboard.xml" value="0.13020833333333334" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/drawable/ic_add.xml" value="0.2703125" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/drawable/ic_menu_camera.xml" value="0.2703125" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/drawable/ic_menu_delete.xml" value="0.2703125" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/drawable/ic_menu_feedback.xml" value="0.2703125" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/drawable/ic_menu_home.xml" value="0.2703125" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/drawable/ic_menu_info.xml" value="0.2703125" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/drawable/ic_menu_person.xml" value="0.2703125" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/layout/activity_add_food.xml" value="0.245018115942029" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/layout/activity_admin.xml" value="0.245018115942029" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/layout/activity_admin_dashborad.xml" value="0.245018115942029" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/layout/activity_dashboard.xml" value="0.13027618551328818" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/layout/activity_food_detail.xml" value="0.245018115942029" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/layout/activity_login.xml" value="0.245018115942029" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/layout/activity_profile_user.xml" value="0.1" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/layout/activity_user.xml" value="0.245018115942029" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/layout/activity_user_dashborad.xml" value="0.192481884057971" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/layout/app_bar_admin.xml" value="0.245018115942029" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/layout/app_bar_dashboard.xml" value="0.3799814643188137" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/layout/content_admin.xml" value="0.245018115942029" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/layout/content_dashboard.xml" value="0.23143115942028986" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/layout/fragment_gallery.xml" value="0.245018115942029" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/layout/fragment_home.xml" value="0.245018115942029" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/layout/fragment_slideshow.xml" value="0.245018115942029" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/layout/layout_food_list.xml" value="0.24010416666666667" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/layout/nav_header_admin.xml" value="0.245018115942029" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/layout/nav_header_dashboard.xml" value="0.23143115942028986" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/menu/activity_dashboard_drawer.xml" value="0.25416666666666665" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/menu/activity_main_drawer.xml" value="0.25416666666666665" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/menu/admin.xml" value="0.25416666666666665" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/menu/food_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/AndroidStudioProjects/userapp/src/main/res/drawable-v24/ic_home.xml" value="0.2703125" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/adminapp/src/main/res/drawable/card_view_background.xml" value="0.2703125" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/adminapp/src/main/res/layout/activity_admin_dashboard.xml" value="0.25416666666666665" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/adminapp/src/main/res/layout/activity_admin_login.xml" value="0.16666666666666666" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/drawable/bg.xml" value="0.2703125" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/drawable/btn_bg.xml" value="0.2703125" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/drawable/card_view_background.xml" value="0.2703125" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/drawable/commonbg.xml" value="0.2703125" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/drawable/ic_email.xml" value="0.2703125" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/drawable/ic_password.xml" value="0.2703125" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/layout/activity_admin_dashborad.xml" value="0.25416666666666665" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/layout/activity_login.xml" value="0.264" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/layout/activity_main.xml" value="0.13020833333333334" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/layout/activity_profile_user.xml" value="0.2" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/layout/activity_registration.xml" value="0.25416666666666665" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/layout/activity_splash.xml" value="0.16666666666666666" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/app/src/main/res/layout/activity_user_dashborad.xml" value="0.25416666666666665" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/userapp/src/main/res/layout/activity_user_dashboard.xml" value="0.25416666666666665" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/userapp/src/main/res/layout/activity_user_login.xml" value="0.2" />
+        <entry key="..\:/tanvi/AndroidStudioProjects/AndroidStudioProjects/userapp/src/main/res/layout/activity_user_registration.xml" value="0.264" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

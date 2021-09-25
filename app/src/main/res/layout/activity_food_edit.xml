@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/commonbg"
+    tools:context=".activity.admin.AddFoodActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:orientation="vertical">
+
+            <com.project.trackmydayapp.fonthelper.RobotoTextViewBold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Food Name"
+                android:textSize="14sp" />
+
+            <com.project.trackmydayapp.fonthelper.FontEditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg"
+                android:ellipsize="end"
+                android:hint="Enter Name"
+                android:id="@+id/ed_et_food_name"
+                android:paddingLeft="16dp"
+                android:singleLine="true"
+                android:textSize="14sp" />
+
+            <com.project.trackmydayapp.fonthelper.RobotoTextViewBold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="16dp"
+                android:text="Common Name"
+                android:textSize="14sp" />
+
+
+            <com.project.trackmydayapp.fonthelper.FontEditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg"
+                android:id="@+id/ed_et_common_name"
+                android:ellipsize="end"
+                android:hint="Enter Common Name"
+                android:paddingLeft="16dp"
+                android:singleLine="true"
+                android:textSize="14sp" />
+
+            <com.project.trackmydayapp.fonthelper.RobotoTextViewBold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="16dp"
+                android:text="Description"
+                android:textSize="14sp" />
+
+            <com.project.trackmydayapp.fonthelper.FontEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg"
+                android:gravity="top|left"
+                android:hint="Enter Description"
+                android:id="@+id/ed_et_description"
+                android:inputType="textMultiLine"
+                android:maxLines="10"
+                android:minLines="4"
+                android:paddingLeft="8dp"
+                android:paddingTop="8dp"
+                android:scrollbars="vertical"
+                android:textSize="14sp" />
+
+            <com.project.trackmydayapp.fonthelper.RobotoTextViewBold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="16dp"
+                android:text="Nitrogen Factor"
+                android:textSize="14sp" />
+
+            <com.project.trackmydayapp.fonthelper.FontEditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg"
+                android:ellipsize="end"
+                android:id="@+id/ed_et_nitrogen"
+                android:inputType="numberDecimal"
+                android:hint="Enter Nitrogen Factor"
+                android:paddingLeft="16dp"
+                android:singleLine="true"
+                android:textSize="14sp" />
+
+            <com.project.trackmydayapp.fonthelper.RobotoTextViewBold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="16dp"
+                android:text="Fat Factor"
+
+                android:textSize="14sp" />
+
+            <com.project.trackmydayapp.fonthelper.FontEditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg"
+                android:ellipsize="end"
+                android:id="@+id/ed_et_fat_factor"
+                android:inputType="numberDecimal"
+                android:hint="Enter Fat Factor"
+                android:paddingLeft="16dp"
+                android:singleLine="true"
+                android:textSize="14sp" />
+
+            <com.project.trackmydayapp.fonthelper.RobotoTextViewBold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="16dp"
+                android:text="Specific Gravity"
+
+                android:textSize="14sp" />
+
+            <com.project.trackmydayapp.fonthelper.FontEditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg"
+                android:ellipsize="end"
+                android:inputType="number"
+                android:id="@+id/ed_et_specific_gravity"
+                android:hint="Enter Specific Gravity"
+                android:paddingLeft="16dp"
+                android:singleLine="true"
+                android:textSize="14sp" />
+
+
+            <com.project.trackmydayapp.fonthelper.RobotoTextViewBold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="16dp"
+                android:text="Analysed Portion"
+                android:textSize="14sp" />
+
+            <com.project.trackmydayapp.fonthelper.FontEditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg"
+                android:ellipsize="end"
+                android:id="@+id/ed_et_analysed_portion"
+                android:hint="Enter Analysed Portion"
+                android:paddingLeft="16dp"
+                android:inputType="number"
+                android:singleLine="true"
+                android:textSize="14sp" />
+
+            <com.project.trackmydayapp.fonthelper.RobotoTextViewBold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="16dp"
+
+                android:text="Unanalysed Portion"
+                android:textSize="14sp" />
+
+            <com.project.trackmydayapp.fonthelper.FontEditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg"
+                android:ellipsize="end"
+                android:id="@+id/ed_et_unanalysed_portion"
+                android:inputType="number"
+                android:hint="Enter Unanalysed Portion"
+                android:paddingLeft="16dp"
+                android:singleLine="true"
+                android:textSize="14sp" />
+
+
+            <com.project.trackmydayapp.fonthelper.RobotoTextViewBold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="16dp"
+
+                android:text="Sampling Details"
+                android:textSize="14sp" />
+
+            <com.project.trackmydayapp.fonthelper.FontEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg"
+                android:gravity="top|left"
+                android:hint="Enter Sampling Details"
+                android:inputType="textMultiLine"
+                android:maxLines="10"
+                android:minLines="4"
+                android:id="@+id/ed_et_sampling_details"
+                android:paddingLeft="8dp"
+                android:paddingTop="8dp"
+                android:scrollbars="vertical"
+                android:textSize="14sp" />
+
+            <com.project.trackmydayapp.fonthelper.RobotoTextViewBold
+                android:id="@+id/btn_edit_food"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/btn_bg"
+                android:gravity="center"
+                android:letterSpacing="0.05"
+                android:text="Edit Food"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

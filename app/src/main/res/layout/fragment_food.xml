@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.admin.fragment.FoodFragment">
+   <com.project.trackmydayapp.fonthelper.FontEditText
+       android:layout_width="match_parent"
+       android:layout_height="45dp"
+       android:layout_marginLeft="16dp"
+       android:layout_marginTop="20dp"
+       android:layout_marginRight="16dp"
+       android:id="@+id/ed_search"
+       android:background="@drawable/bg"
+       android:hint="Search Food"
+       android:drawablePadding="15dp"
+       android:drawableLeft="@drawable/ic_search"
+       android:singleLine="true"
+       android:ellipsize="end"
+       android:paddingLeft="16dp"
+       android:textSize="14sp" />
+   <androidx.recyclerview.widget.RecyclerView
+       android:id="@+id/ry_food_list"
+       android:layout_below="@+id/ed_search"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"/>
+   <com.project.trackmydayapp.fonthelper.RobotoTextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_centerInParent="true"
+       android:text="No Food Found"
+       android:visibility="gone"
+       android:id="@+id/txt_nodata_food"/>
+   <com.google.android.material.floatingactionbutton.FloatingActionButton
+       android:id="@+id/fab"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_alignParentRight="true"
+       android:layout_alignParentBottom="true"
+       android:layout_gravity="bottom|end"
+       android:layout_marginEnd="@dimen/fab_margin"
+       android:layout_marginBottom="16dp"
+       app:srcCompat="@drawable/ic_add" />
+
+</RelativeLayout>

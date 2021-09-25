@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_dashboard">
+
+    <fragment
+        android:id="@+id/nav_dashboard"
+        android:name="com.project.trackmydayapp.activity.admin.fragment.DashboardFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.project.trackmydayapp.activity.admin.fragment.FoodFragment"
+        android:label="Food"
+        tools:layout="@layout/fragment_food" />
+
+
+    <fragment
+        android:id="@+id/nav_all_user"
+        android:name="com.project.trackmydayapp.activity.admin.fragment.AllUserFragment"
+        android:label="All User"
+        tools:layout="@layout/fragment_alluser" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.project.trackmydayapp.activity.admin.fragment.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/nav_feedback"
+        android:name="com.project.trackmydayapp.activity.admin.fragment.AllFeedbackFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_all_feedback" />
+</navigation>

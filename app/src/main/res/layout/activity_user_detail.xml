@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/commonbg"
+    tools:context=".activity.admin.AddFoodActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:orientation="vertical">
+
+            <com.project.trackmydayapp.fonthelper.RobotoTextViewBold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="User Name"
+                android:textSize="14sp" />
+
+            <com.project.trackmydayapp.fonthelper.RobotoTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:id="@+id/txt_user_dt_name"
+                android:textSize="14sp" />
+
+            <com.project.trackmydayapp.fonthelper.RobotoTextViewBold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Email"
+                android:textSize="14sp" />
+
+
+            <com.project.trackmydayapp.fonthelper.RobotoTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ellipsize="end"
+                android:id="@+id/txt_user_dt_email"
+                android:textSize="14sp" />
+
+            <com.project.trackmydayapp.fonthelper.RobotoTextViewBold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Height"
+                android:textSize="14sp" />
+
+            <com.project.trackmydayapp.fonthelper.RobotoTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ellipsize="end"
+                android:id="@+id/txt_user_dt_height"
+                android:textSize="14sp" />
+
+            <com.project.trackmydayapp.fonthelper.RobotoTextViewBold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Weight"
+                android:textSize="14sp" />
+
+            <com.project.trackmydayapp.fonthelper.RobotoTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ellipsize="end"
+                android:id="@+id/txt_user_dt_weight"
+                android:textSize="14sp" />
+
+
+            <com.project.trackmydayapp.fonthelper.RobotoTextViewBold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Age"
+
+                android:textSize="14sp" />
+
+            <com.project.trackmydayapp.fonthelper.RobotoTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:id="@+id/txt_user_dt_age"
+                android:ellipsize="end"
+                android:textSize="14sp" />
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

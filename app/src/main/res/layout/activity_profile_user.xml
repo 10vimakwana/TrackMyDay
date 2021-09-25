@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/commonbg"
+    tools:context=".activity.LoginActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+       >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="180dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:src="@drawable/logo"
+                android:paddingTop="10dp"
+                android:visibility="gone" />
+
+            <com.project.trackmydayapp.fonthelper.RobotoTextViewBold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/purple_500"
+                android:textSize="26dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:visibility="visible"
+                android:text="Profile Details" />
+
+
+            <com.project.trackmydayapp.fonthelper.FontEditText
+                android:id="@+id/ed_reg_firstname"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/bg"
+                android:ellipsize="end"
+                android:hint="Enter First Name"
+                android:paddingLeft="16dp"
+                android:singleLine="true"
+                android:textSize="14sp" />
+
+
+            <com.project.trackmydayapp.fonthelper.FontEditText
+                android:id="@+id/ed_reg_height"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/bg"
+                android:hint="Enter Height(cm)"
+                android:inputType="numberDecimal"
+                android:paddingLeft="16dp"
+                android:textSize="14sp" />
+
+            <com.project.trackmydayapp.fonthelper.FontEditText
+                android:id="@+id/ed_reg_weight"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/bg"
+                android:hint="Enter Weight(kg)"
+                android:inputType="numberDecimal"
+                android:paddingLeft="16dp"
+                android:textSize="14sp" />
+
+
+            <com.project.trackmydayapp.fonthelper.FontEditText
+                android:id="@+id/ed_reg_age"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/bg"
+                android:gravity="center_vertical"
+                android:hint="Age"
+                android:inputType="number"
+                android:paddingLeft="16dp"
+                android:textSize="14sp" />
+
+            <com.project.trackmydayapp.fonthelper.RobotoTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:text="Gender"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+            <RadioGroup
+                android:id="@+id/rg_reg_gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:checkedButton="@id/rb_male"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/male"
+                    android:textColor="@color/black" />
+
+                <RadioButton
+                    android:id="@+id/rb_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:text="@string/female"
+                    android:textColor="@color/black" />
+            </RadioGroup>
+
+            <com.project.trackmydayapp.fonthelper.RobotoTextViewBold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="16dp"
+                android:text="Select the statement that best Describes your usual activity level"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="16dp"
+                android:checkedButton="@id/rb_male"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Inactive : Never or rarely include physical acitvity in your day."
+                    android:textColor="@color/black" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Somewhat active : include light activity or moderate activity about two to three times a week."
+                    android:textColor="@color/black" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Active : include at least 30 minutes of moderate activity most days of the week,or 20 minutes of vigorous activity at least three days a week."
+                    android:textColor="@color/black" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Very active : include large amounts of moderate or vigorous activity in your day. "
+                    android:textColor="@color/black" />
+            </RadioGroup>
+
+
+            <com.project.trackmydayapp.fonthelper.RobotoTextViewBold
+                android:id="@+id/btn_profile_reg"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/btn_bg"
+                android:gravity="center"
+                android:letterSpacing="0.05"
+                android:text="Save Profile"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</RelativeLayout>
