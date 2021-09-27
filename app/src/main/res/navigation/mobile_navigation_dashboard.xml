@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nav_dashboard"
-        android:name="com.project.trackmydayapp.activity.user.fragment.UserHomeFragment"
+        android:name="com.project.trackmydayapp.activity.user.fragment.CalculateFragment"
         android:label="Dashboard"
         tools:layout="@layout/fragment_dashboard" />
 

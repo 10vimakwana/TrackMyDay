@@ -11,7 +11,6 @@ import com.project.trackmydayapp.R
 import com.project.trackmydayapp.database.DatabaseHandler
 
 class AddFoodActivity : AppCompatActivity() {
-//    todo add food
     lateinit var ed_food_name: EditText;
     lateinit var ed_common_name: EditText;
     lateinit var ed_description: EditText;

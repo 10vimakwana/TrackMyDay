@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/commonbg"
+    android:orientation="vertical"
     tools:context=".activity.user.fragment.FeedbackFragment">
 
     <com.project.trackmydayapp.fonthelper.RobotoTextView
@@ -30,6 +30,7 @@
         android:paddingLeft="16dp"
         android:singleLine="true"
         android:textSize="14sp" />
+
     <com.project.trackmydayapp.fonthelper.RobotoTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -41,13 +42,16 @@
         android:textSize="18sp" />
 
     <com.project.trackmydayapp.fonthelper.FontEditText
+        android:id="@+id/ed_feedback"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+
         android:background="@drawable/bg"
         android:gravity="top|left"
         android:hint="Enter Feedback"
-        android:id="@+id/ed_feedback"
         android:inputType="textMultiLine"
         android:maxLines="10"
         android:minLines="6"
@@ -55,10 +59,14 @@
         android:paddingTop="8dp"
         android:scrollbars="vertical"
         android:textSize="14sp" />
+
     <com.project.trackmydayapp.fonthelper.RobotoTextViewBold
         android:id="@+id/btn_feedback"
         android:layout_width="match_parent"
         android:layout_height="45dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp"

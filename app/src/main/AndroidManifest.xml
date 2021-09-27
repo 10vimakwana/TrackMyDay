@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TrackMyDayapp">
         <activity
+            android:name=".activity.user.AddStepActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.user.AddRecipeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.user.ViewDataActivity"
+            android:exported="true" />
+        <activity
             android:name=".activity.admin.UserDetailActivity"
             android:exported="true" />
         <activity
