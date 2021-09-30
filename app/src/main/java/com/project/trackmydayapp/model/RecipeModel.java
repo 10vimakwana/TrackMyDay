@@ -1,15 +1,24 @@
 package com.project.trackmydayapp.model;
 
 public class RecipeModel {
-    Integer recipeId,userid,foodId;
+    Integer recipeId,userid,foodId,calories;
     String recipeName,recipeDate;
 
-    public RecipeModel(Integer recipeId, Integer userid, Integer foodId, String recipeName, String recipeDate) {
+    public RecipeModel(Integer recipeId, Integer userid, Integer foodId, Integer calories, String recipeName, String recipeDate) {
         this.recipeId = recipeId;
         this.userid = userid;
         this.foodId = foodId;
+        this.calories = calories;
         this.recipeName = recipeName;
         this.recipeDate = recipeDate;
+    }
+
+    public Integer getCalories() {
+        return calories;
+    }
+
+    public void setCalories(Integer calories) {
+        this.calories = calories;
     }
 
     public Integer getRecipeId() {

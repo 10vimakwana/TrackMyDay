@@ -44,6 +44,7 @@ class AddRecipeActivity : AppCompatActivity() {
                 date.toString()
             );
             if (status > -1) {
+                onBackPressed()
                 Toast.makeText(applicationContext, "Recipe Successfully Added", Toast.LENGTH_SHORT)
                     .show()
             } else {

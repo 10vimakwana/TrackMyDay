@@ -29,8 +29,13 @@ class AddStepActivity : AppCompatActivity() {
                 val db: DatabaseHandler = DatabaseHandler(this);
                 val sessionManager: SessionManager = SessionManager.getInstance(this)!!
 
-                val status = db.addStep(sessionManager.userId.toString().toInt(),ed_steps.text.toString().toInt(),date.toString());
+                val status = db.addStep(
+                    sessionManager.userId.toString().toInt(),
+                    ed_steps.text.toString().toInt(),
+                    date.toString()
+                );
                 if (status > -1) {
+                    onBackPressed()
                     Toast.makeText(this, "Steps Successfully Added", Toast.LENGTH_SHORT).show()
                 } else {
                     Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show()

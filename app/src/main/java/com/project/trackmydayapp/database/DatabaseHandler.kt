@@ -417,6 +417,7 @@ class DatabaseHandler(val context: Context?) :
         var recipeId: Int
         var userId: Int
         var foodid: Int
+        var calories: Int
         var recipeName: String
         var recipeDate: String
         if (cursor.moveToFirst()) {
@@ -424,9 +425,10 @@ class DatabaseHandler(val context: Context?) :
                 recipeId = cursor.getInt(cursor.getColumnIndex(KEY_RECIPE_ID))
                 userId = cursor.getInt(cursor.getColumnIndex(KEY_RECIPE_USERID))
                 foodid = cursor.getInt(cursor.getColumnIndex(KEY_RECIPE_FOODID))
+                calories = cursor.getInt(cursor.getColumnIndex(KEY_RECIPE_CALORIES))
                 recipeName = cursor.getString(cursor.getColumnIndex(KEY_RECIPE_NAME))
                 recipeDate = cursor.getString(cursor.getColumnIndex(KEY_RECIPE_DATE))
-                userlist.add(RecipeModel(recipeId, userId, foodid, recipeName, recipeDate))
+                userlist.add(RecipeModel(recipeId, userId, foodid,calories, recipeName, recipeDate))
             } while (cursor.moveToNext())
         }
         return userlist
