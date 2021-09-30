@@ -7,10 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper
 import android.content.ContentValues
 import android.database.Cursor
 import android.database.sqlite.SQLiteException
-import com.project.trackmydayapp.model.FeedbackModel
-import com.project.trackmydayapp.model.FoodModel
-import com.project.trackmydayapp.model.UserModel
-import com.project.trackmydayapp.model.UserProfileModel
+import com.project.trackmydayapp.model.*
 
 //creating the database logic, extending the SQLiteOpenHelper base class  
 class DatabaseHandler(val context: Context?) :
@@ -31,6 +28,7 @@ class DatabaseHandler(val context: Context?) :
         private val KEY_WEIGHT = "Weight"
         private val KEY_AGE = "Age"
         private val KEY_GENDER = "Gender"
+        private val KEY_ACTIVITY = "Activity"
 
         private val FOOD_TABLE = "FoodTable"
         private val KEY_FOOD_ID = "FoodId"
@@ -39,6 +37,7 @@ class DatabaseHandler(val context: Context?) :
         private val KEY_DESCRIPTION = "FoodDescription"
         private val KEY_NITROGEN_FACTOR = "NitrogenFactor"
         private val KEY_FAT_FACTOR = "FatFactor"
+        private val KEY_CALORIES_FACTOR = "CaloriesFactor"
         private val KEY_SPECIFIC_GRAVITY = "SpecificGravity"
         private val KEY_SAMPLING_DETAILS = "SamplingDetail"
         private val KEY_ANALYSED_PORTION = "AnalysedPortion"
@@ -50,6 +49,21 @@ class DatabaseHandler(val context: Context?) :
         private val KEY_FEEDBACK_TITLE = "FeedbackTitle"
         private val KEY_FEEDBACK_DES = "FeedBack"
 
+        private val STEP_TABLE = "StepTable"
+        private val KEY_STEP_ID = "StepId"
+        private val KEY_STEP_USERID = "StepUserId"
+        private val KEY_STEPS = "Steps"
+        private val KEY_STEP_DATE = "StepDate"
+
+
+        private val RECIPE_TABLE = "RecipeTable"
+        private val KEY_RECIPE_ID = "RecipeId"
+        private val KEY_RECIPE_USERID = "RecipeUserId"
+        private val KEY_RECIPE_FOODID = "RecipeFoodId"
+        private val KEY_RECIPE_CALORIES = "RecipeCalories"
+        private val KEY_RECIPE_NAME = "RecipeName"
+        private val KEY_RECIPE_DATE = "RecipeDate"
+
     }
 
 
@@ -59,19 +73,36 @@ class DatabaseHandler(val context: Context?) :
         val CREATE_REG_TABLE =
             ("CREATE TABLE " + REGISTRATION_TABLE + "(" + KEY_REG_ID + " INTEGER PRIMARY KEY," + KEY_REG_EMAIL + " TEXT," + KEY_REG_PASSWORD + " TEXT" + ")")
         val CREATE_PROFILE_TABLE =
-            ("CREATE TABLE " + PROFILE_TABLE + "(" + KEY_PROFILE_ID + " INTEGER PRIMARY KEY," + KEY_PROFILE_REGID + " INTEGER," + KEY_FIRST_NAME + " TEXT," + KEY_HEIGHT + " REAL," + KEY_WEIGHT + " REAL," + KEY_AGE + " INTEGER," + KEY_GENDER + " TEXT" + ")")
+            ("CREATE TABLE " + PROFILE_TABLE + "(" + KEY_PROFILE_ID + " INTEGER PRIMARY KEY," + KEY_PROFILE_REGID + " INTEGER," + KEY_FIRST_NAME + " TEXT," + KEY_HEIGHT + " REAL," + KEY_WEIGHT + " REAL," + KEY_AGE + " INTEGER," + KEY_ACTIVITY + " TEXT," + KEY_GENDER + " TEXT" + ")")
         val CREATE_FOOOD_TABLE =
-            ("CREATE TABLE " + FOOD_TABLE + "(" + KEY_FOOD_ID + " INTEGER PRIMARY KEY," + KEY_FOOD_NAME + " TEXT," + KEY_COMMON_NAME + " TEXT," + KEY_DESCRIPTION + " TEXT," + KEY_NITROGEN_FACTOR + " REAL," + KEY_FAT_FACTOR + " REAL," + KEY_SPECIFIC_GRAVITY + " REAL," + KEY_SAMPLING_DETAILS + " TEXT," + KEY_ANALYSED_PORTION + " REAL," + KEY_UNANALYSED_PORTION + " REAL" + ")")
+            ("CREATE TABLE " + FOOD_TABLE + "(" + KEY_FOOD_ID + " INTEGER PRIMARY KEY," + KEY_FOOD_NAME + " TEXT," + KEY_COMMON_NAME + " TEXT," + KEY_DESCRIPTION + " TEXT," + KEY_NITROGEN_FACTOR + " REAL," + KEY_FAT_FACTOR + " REAL," + KEY_CALORIES_FACTOR + " INTEGER," + KEY_SPECIFIC_GRAVITY + " REAL," + KEY_SAMPLING_DETAILS + " TEXT," + KEY_ANALYSED_PORTION + " REAL," + KEY_UNANALYSED_PORTION + " REAL" + ")")
         val CREATE_FEEDBACK_TABLE =
             ("CREATE TABLE " + FEEDBACK_TABLE + "(" + KEY_FEEDBACK_ID + " INTEGER PRIMARY KEY," + KEY_FEEDBACK_USERID + " INTEGER," + KEY_FEEDBACK_TITLE + " TEXT," + KEY_FEEDBACK_DES + " TEXT" + ")")
+        val CREATE_STEP_TABLE =
+            ("CREATE TABLE " + STEP_TABLE + "(" + KEY_STEP_ID + " INTEGER PRIMARY KEY," + KEY_STEP_USERID + " INTEGER," + KEY_STEPS + " INTEGER," + KEY_STEP_DATE + " TEXT" + ")")
+        val CREATE_RECIPE_TABLE =
+            ("CREATE TABLE " + RECIPE_TABLE + "(" + KEY_RECIPE_ID + " INTEGER PRIMARY KEY," + KEY_RECIPE_USERID + " INTEGER," + KEY_RECIPE_FOODID + " INTEGER," + KEY_RECIPE_CALORIES + " INTEGER," + KEY_RECIPE_NAME + " TEXT," + KEY_RECIPE_DATE + " TEXT" + ")")
         db?.execSQL(CREATE_REG_TABLE)
         db?.execSQL(CREATE_PROFILE_TABLE)
         db?.execSQL(CREATE_FOOOD_TABLE)
         db?.execSQL(CREATE_FEEDBACK_TABLE)
+        db?.execSQL(CREATE_STEP_TABLE)
+        db?.execSQL(CREATE_RECIPE_TABLE)
         val contentValues = ContentValues()
         contentValues.put(KEY_REG_EMAIL, "admin@gmail.com")
         contentValues.put(KEY_REG_PASSWORD, "123456")
         val success = db?.insert(REGISTRATION_TABLE, null, contentValues)
+        val food1 = ContentValues()
+//        food1.put(KEY_FOOD_NAME, foodname)
+//        food1.put(KEY_COMMON_NAME, commonname)
+//        food1.put(KEY_DESCRIPTION, description)
+//        food1.put(KEY_NITROGEN_FACTOR, nitrogen)
+//        food1.put(KEY_FAT_FACTOR, fat)
+//        food1.put(KEY_SPECIFIC_GRAVITY, specificgravity)
+//        food1.put(KEY_ANALYSED_PORTION, analysedportion)
+//        food1.put(KEY_UNANALYSED_PORTION, unanalysedportion)
+//        food1.put(KEY_SAMPLING_DETAILS, samplingdetails)
+        val food1suc = db?.insert(REGISTRATION_TABLE, null, food1)
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
@@ -80,6 +111,8 @@ class DatabaseHandler(val context: Context?) :
         db!!.execSQL("DROP TABLE IF EXISTS " + PROFILE_TABLE)
         db!!.execSQL("DROP TABLE IF EXISTS " + FOOD_TABLE)
         db!!.execSQL("DROP TABLE IF EXISTS " + FEEDBACK_TABLE)
+        db!!.execSQL("DROP TABLE IF EXISTS " + STEP_TABLE)
+        db!!.execSQL("DROP TABLE IF EXISTS " + RECIPE_TABLE)
         onCreate(db)
     }
 
@@ -93,6 +126,42 @@ class DatabaseHandler(val context: Context?) :
         contentValues.put(KEY_FEEDBACK_DES, description)
         // Inserting Row
         val success = dbase.insert(FEEDBACK_TABLE, null, contentValues)
+        //2nd argument is String containing nullColumnHack
+        dbase.close() // Closing database connection
+        return success
+    }
+
+    ///method to insert data
+    fun addStep(userid: Int, steps: Int, date: String): Long {
+        val dbase = this.writableDatabase
+        val contentValues = ContentValues()
+        contentValues.put(KEY_STEP_USERID, userid)
+        contentValues.put(KEY_STEPS, steps)
+        contentValues.put(KEY_STEP_DATE, date)
+        // Inserting Row
+        val success = dbase.insert(STEP_TABLE, null, contentValues)
+        //2nd argument is String containing nullColumnHack
+        dbase.close() // Closing database connection
+        return success
+    }
+
+    ///method to insert data
+    fun addRecipe(
+        userid: Int,
+        foodid: Int,
+        calories: Int,
+        recipeName: String,
+        recipeDate: String
+    ): Long {
+        val dbase = this.writableDatabase
+        val contentValues = ContentValues()
+        contentValues.put(KEY_RECIPE_USERID, userid)
+        contentValues.put(KEY_RECIPE_FOODID, foodid)
+        contentValues.put(KEY_RECIPE_CALORIES, calories)
+        contentValues.put(KEY_RECIPE_NAME, recipeName)
+        contentValues.put(KEY_RECIPE_DATE, recipeDate)
+        // Inserting Row
+        val success = dbase.insert(RECIPE_TABLE, null, contentValues)
         //2nd argument is String containing nullColumnHack
         dbase.close() // Closing database connection
         return success
@@ -117,7 +186,8 @@ class DatabaseHandler(val context: Context?) :
         weight: Double,
         height: Double,
         age: String,
-        gender: String
+        gender: String,
+        activity: String
     ): Long {
         val dbase = this.writableDatabase
         val contentValues = ContentValues()
@@ -127,6 +197,7 @@ class DatabaseHandler(val context: Context?) :
         contentValues.put(KEY_HEIGHT, height)
         contentValues.put(KEY_AGE, age)
         contentValues.put(KEY_GENDER, gender)
+        contentValues.put(KEY_ACTIVITY, activity)
         // Inserting Row
         val success = dbase.insert(PROFILE_TABLE, null, contentValues)
         //2nd argument is String containing nullColumnHack
@@ -141,6 +212,7 @@ class DatabaseHandler(val context: Context?) :
         description: String,
         nitrogen: Double,
         fat: Double,
+        calories: Int,
         specificgravity: Int,
         analysedportion: Int,
         unanalysedportion: Int,
@@ -153,6 +225,7 @@ class DatabaseHandler(val context: Context?) :
         contentValues.put(KEY_DESCRIPTION, description)
         contentValues.put(KEY_NITROGEN_FACTOR, nitrogen)
         contentValues.put(KEY_FAT_FACTOR, fat)
+        contentValues.put(KEY_CALORIES_FACTOR, calories)
         contentValues.put(KEY_SPECIFIC_GRAVITY, specificgravity)
         contentValues.put(KEY_ANALYSED_PORTION, analysedportion)
         contentValues.put(KEY_UNANALYSED_PORTION, unanalysedportion)
@@ -182,6 +255,7 @@ class DatabaseHandler(val context: Context?) :
         var description: String
         var nitrogen: Double
         var fat: Double
+        var calories: Int
         var specificgravity: Int
         var analysedportion: Int
         var unanalysedportion: Int
@@ -194,6 +268,7 @@ class DatabaseHandler(val context: Context?) :
                 description = cursor.getString(cursor.getColumnIndex(KEY_DESCRIPTION))
                 nitrogen = cursor.getDouble(cursor.getColumnIndex(KEY_NITROGEN_FACTOR))
                 fat = cursor.getDouble(cursor.getColumnIndex(KEY_FAT_FACTOR))
+                calories = cursor.getInt(cursor.getColumnIndex(KEY_CALORIES_FACTOR))
                 specificgravity = cursor.getInt(cursor.getColumnIndex(KEY_SPECIFIC_GRAVITY))
                 analysedportion = cursor.getInt(cursor.getColumnIndex(KEY_ANALYSED_PORTION))
                 unanalysedportion = cursor.getInt(cursor.getColumnIndex(KEY_UNANALYSED_PORTION))
@@ -207,6 +282,7 @@ class DatabaseHandler(val context: Context?) :
                         samplingdetails,
                         nitrogen,
                         fat,
+                        calories,
                         specificgravity,
                         analysedportion,
                         unanalysedportion,
@@ -236,6 +312,7 @@ class DatabaseHandler(val context: Context?) :
         var description: String
         var nitrogen: Double
         var fat: Double
+        var calories: Int
         var specificgravity: Int
         var analysedportion: Int
         var unanalysedportion: Int
@@ -248,6 +325,7 @@ class DatabaseHandler(val context: Context?) :
                 description = cursor.getString(cursor.getColumnIndex(KEY_DESCRIPTION))
                 nitrogen = cursor.getDouble(cursor.getColumnIndex(KEY_NITROGEN_FACTOR))
                 fat = cursor.getDouble(cursor.getColumnIndex(KEY_FAT_FACTOR))
+                calories = cursor.getInt(cursor.getColumnIndex(KEY_CALORIES_FACTOR))
                 specificgravity = cursor.getInt(cursor.getColumnIndex(KEY_SPECIFIC_GRAVITY))
                 analysedportion = cursor.getInt(cursor.getColumnIndex(KEY_ANALYSED_PORTION))
                 unanalysedportion = cursor.getInt(cursor.getColumnIndex(KEY_UNANALYSED_PORTION))
@@ -261,6 +339,7 @@ class DatabaseHandler(val context: Context?) :
                         samplingdetails,
                         nitrogen,
                         fat,
+                        calories,
                         specificgravity,
                         analysedportion,
                         unanalysedportion,
@@ -269,6 +348,110 @@ class DatabaseHandler(val context: Context?) :
             } while (cursor.moveToNext())
         }
         return foodlist
+    }
+
+    @SuppressLint("Range")
+    fun viewSteps(userid: Int, date: String): ArrayList<StepModel> {
+        val userlist: ArrayList<StepModel> = ArrayList<StepModel>()
+        val selectQuery =
+            "SELECT  * FROM $STEP_TABLE" + " where " + KEY_STEP_USERID + " = '" + userid + "'" + " AND " + KEY_STEP_DATE + " = '" + date + "'"
+        val db = this.readableDatabase
+        var cursor: Cursor? = null
+        try {
+            cursor = db.rawQuery(selectQuery, null)
+        } catch (e: SQLiteException) {
+            db.execSQL(selectQuery)
+            return ArrayList()
+        }
+        var stepId: Int
+        var userId: Int
+        var step: Int
+        var date: String
+        if (cursor.moveToFirst()) {
+            do {
+                stepId = cursor.getInt(cursor.getColumnIndex(KEY_STEP_ID))
+                userId = cursor.getInt(cursor.getColumnIndex(KEY_STEP_USERID))
+                step = cursor.getInt(cursor.getColumnIndex(KEY_STEPS))
+                date = cursor.getString(cursor.getColumnIndex(KEY_STEP_DATE))
+                userlist.add(StepModel(stepId, userId, step, date))
+            } while (cursor.moveToNext())
+        }
+        return userlist
+    }
+
+    @SuppressLint("Range")
+    fun viewStepsCal(userid: Int, date: String): Int {
+        var totalstep = 0
+        val selectQuery = "SELECT SUM($KEY_STEPS) as Total FROM $STEP_TABLE"
+        val db = this.readableDatabase
+        var cursor: Cursor? = null
+        try {
+            cursor = db.rawQuery(selectQuery, null)
+        } catch (e: SQLiteException) {
+            db.execSQL(selectQuery)
+            return totalstep
+        }
+        if (cursor.moveToFirst()) {
+            do {
+
+                val total = cursor.getInt(cursor.getColumnIndex("Total"))
+                totalstep = total;
+            } while (cursor.moveToNext())
+        }
+        return totalstep
+    }
+
+    @SuppressLint("Range")
+    fun viewRecipe(userid: Int, date: String): ArrayList<RecipeModel> {
+        val userlist: ArrayList<RecipeModel> = ArrayList<RecipeModel>()
+        val selectQuery =
+            "SELECT  * FROM $RECIPE_TABLE" + " where " + KEY_RECIPE_USERID + " = '" + userid + "'" + " AND " + KEY_RECIPE_DATE + " = '" + date + "'"
+        val db = this.readableDatabase
+        var cursor: Cursor? = null
+        try {
+            cursor = db.rawQuery(selectQuery, null)
+        } catch (e: SQLiteException) {
+            db.execSQL(selectQuery)
+            return ArrayList()
+        }
+        var recipeId: Int
+        var userId: Int
+        var foodid: Int
+        var recipeName: String
+        var recipeDate: String
+        if (cursor.moveToFirst()) {
+            do {
+                recipeId = cursor.getInt(cursor.getColumnIndex(KEY_RECIPE_ID))
+                userId = cursor.getInt(cursor.getColumnIndex(KEY_RECIPE_USERID))
+                foodid = cursor.getInt(cursor.getColumnIndex(KEY_RECIPE_FOODID))
+                recipeName = cursor.getString(cursor.getColumnIndex(KEY_RECIPE_NAME))
+                recipeDate = cursor.getString(cursor.getColumnIndex(KEY_RECIPE_DATE))
+                userlist.add(RecipeModel(recipeId, userId, foodid, recipeName, recipeDate))
+            } while (cursor.moveToNext())
+        }
+        return userlist
+    }
+
+
+    @SuppressLint("Range")
+    fun viewRecipeCal(userid: Int, date: String): Int {
+        var totalCalories = 0
+        val selectQuery = "SELECT SUM($KEY_RECIPE_CALORIES) as Total FROM $RECIPE_TABLE"
+        val db = this.readableDatabase
+        var cursor: Cursor? = null
+        try {
+            cursor = db.rawQuery(selectQuery, null)
+        } catch (e: SQLiteException) {
+            db.execSQL(selectQuery)
+            return totalCalories
+        }
+        if (cursor.moveToFirst()) {
+            do {
+                val total = cursor.getInt(cursor.getColumnIndex("Total"))
+                totalCalories = total;
+            } while (cursor.moveToNext())
+        }
+        return totalCalories
     }
 
     @SuppressLint("Range")
@@ -347,6 +530,7 @@ class DatabaseHandler(val context: Context?) :
         var height: Double
         var weight: Double
         var age: Double
+        var activity: String
         if (cursor.moveToFirst()) {
             do {
                 profile_id = cursor.getInt(cursor.getColumnIndex(KEY_PROFILE_ID))
@@ -356,6 +540,7 @@ class DatabaseHandler(val context: Context?) :
                 weight = cursor.getDouble(cursor.getColumnIndex(KEY_WEIGHT))
                 age = cursor.getDouble(cursor.getColumnIndex(KEY_AGE))
                 gender = cursor.getString(cursor.getColumnIndex(KEY_GENDER))
+                activity = cursor.getString(cursor.getColumnIndex(KEY_ACTIVITY))
                 userlist.add(
                     UserProfileModel(
                         profile_id,
@@ -364,7 +549,8 @@ class DatabaseHandler(val context: Context?) :
                         gender,
                         height,
                         weight,
-                        age
+                        age,
+                        activity
                     )
                 )
             } while (cursor.moveToNext())
@@ -393,8 +579,9 @@ class DatabaseHandler(val context: Context?) :
             } while (cursor.moveToNext())
         }
         return 0
-    }//method to read data
+    }
 
+    //method to read data
     @SuppressLint("Range")
     fun getUserId(): Int {
         val selectQuery =

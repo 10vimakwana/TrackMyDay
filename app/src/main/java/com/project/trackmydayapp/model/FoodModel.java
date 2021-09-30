@@ -4,9 +4,10 @@ public class FoodModel {
     Integer foodId;
     String foodName,commonName,description,samplingDetails;
     Double nitrogen,fat;
+    int calories;
     Integer specificGravity,analysedPortion,unanalyPortion;
 
-    public FoodModel(Integer foodId, String foodName, String commonName, String description, String samplingDetails, Double nitrogen, Double fat, Integer specificGravity, Integer analysedPortion, Integer unanalyPortion) {
+    public FoodModel(Integer foodId, String foodName, String commonName, String description, String samplingDetails, Double nitrogen, Double fat, int calories, Integer specificGravity, Integer analysedPortion, Integer unanalyPortion) {
         this.foodId = foodId;
         this.foodName = foodName;
         this.commonName = commonName;
@@ -14,9 +15,18 @@ public class FoodModel {
         this.samplingDetails = samplingDetails;
         this.nitrogen = nitrogen;
         this.fat = fat;
+        this.calories = calories;
         this.specificGravity = specificGravity;
         this.analysedPortion = analysedPortion;
         this.unanalyPortion = unanalyPortion;
+    }
+
+    public int getCalories() {
+        return calories;
+    }
+
+    public void setCalories(int calories) {
+        this.calories = calories;
     }
 
     public Integer getFoodId() {

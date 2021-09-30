@@ -16,6 +16,7 @@ class ProfileUserActivity : AppCompatActivity() {
     lateinit var ed_reg_age: EditText;
     lateinit var btn_reg: TextView;
     lateinit var gender: RadioGroup;
+    lateinit var rg_activity: RadioGroup;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,7 +37,9 @@ class ProfileUserActivity : AppCompatActivity() {
                 val genderId = gender.checkedRadioButtonId
                 val genderString = resources.getResourceEntryName(genderId).toString()
                 val db: DatabaseHandler = DatabaseHandler(this);
-                val status = db.addProfileUser(userid,ed_reg_firstname.text.toString(), ed_reg_weight.text.toString().toDouble(),ed_reg_height.text.toString().toDouble(),ed_reg_age.text.toString(),genderString);
+                val actvityid = rg_activity.checkedRadioButtonId
+                val activityString = resources.getResourceEntryName(actvityid).toString()
+                val status = db.addProfileUser(userid,ed_reg_firstname.text.toString(), ed_reg_weight.text.toString().toDouble(),ed_reg_height.text.toString().toDouble(),ed_reg_age.text.toString(),genderString,activityString);
                 if (status > -1) {
                     Toast.makeText(this, "Profile Saved", Toast.LENGTH_SHORT).show()
                     val sessionManager: SessionManager = SessionManager.getInstance(this)!!
@@ -59,6 +62,7 @@ class ProfileUserActivity : AppCompatActivity() {
         ed_reg_weight = findViewById(R.id.ed_reg_weight);
         ed_reg_age = findViewById(R.id.ed_reg_age);
         gender = findViewById(R.id.rg_reg_gender);
+        rg_activity = findViewById(R.id.rg_activity);
         btn_reg = findViewById(R.id.btn_profile_reg);
 
     }

@@ -20,6 +20,7 @@ class AddFoodActivity : AppCompatActivity() {
     lateinit var ed_analysed_portion: EditText;
     lateinit var ed_unanalysed_portion: EditText;
     lateinit var ed_sampling_details: EditText;
+    lateinit var ed_calories_factor: EditText;
     lateinit var btn_add_food: TextView;
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,6 +60,7 @@ class AddFoodActivity : AppCompatActivity() {
                     ed_description.text.toString(),
                     ed_nitrogen.text.toString().toDouble(),
                     ed_fat_factor.text.toString().toDouble(),
+                    ed_calories_factor.text.toString().toInt(),
                     ed_specific_gravity.text.toString().toInt(),
                     ed_analysed_portion.text.toString().toInt(),
                     ed_unanalysed_portion.text.toString().toInt(),
@@ -88,6 +90,7 @@ class AddFoodActivity : AppCompatActivity() {
         ed_analysed_portion = findViewById(R.id.ed_analysed_portion);
         ed_unanalysed_portion = findViewById(R.id.ed_unanalysed_portion);
         ed_sampling_details = findViewById(R.id.ed_sampling_details);
+        ed_calories_factor = findViewById(R.id.ed_calories_factor);
         btn_add_food = findViewById(R.id.btn_add_food);
 
     }

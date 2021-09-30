@@ -4,8 +4,9 @@ public class UserProfileModel {
     Integer profile_id,pro_reg_id;
     String firstname,gender;
     Double  height,weight,age;
+    String activity;
 
-    public UserProfileModel(Integer profile_id, Integer pro_reg_id, String firstname, String gender, Double height, Double weight, Double age) {
+    public UserProfileModel(Integer profile_id, Integer pro_reg_id, String firstname, String gender, Double height, Double weight, Double age, String activity) {
         this.profile_id = profile_id;
         this.pro_reg_id = pro_reg_id;
         this.firstname = firstname;
@@ -13,6 +14,15 @@ public class UserProfileModel {
         this.height = height;
         this.weight = weight;
         this.age = age;
+        this.activity = activity;
+    }
+
+    public String getActivity() {
+        return activity;
+    }
+
+    public void setActivity(String activity) {
+        this.activity = activity;
     }
 
     public Integer getProfile_id() {

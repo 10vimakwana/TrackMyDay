@@ -59,7 +59,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="16dp"
                 android:background="@drawable/bg"
-                android:hint="Enter Height(cm)"
+                android:hint="Enter Height(ft)"
                 android:inputType="numberDecimal"
                 android:paddingLeft="16dp"
                 android:textSize="14sp" />
@@ -72,7 +72,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="16dp"
                 android:background="@drawable/bg"
-                android:hint="Enter Weight(kg)"
+                android:hint="Enter Weight(lbs)"
                 android:inputType="numberDecimal"
                 android:paddingLeft="16dp"
                 android:textSize="14sp" />
@@ -145,6 +145,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="5dp"
+                android:id="@+id/rg_activity"
                 android:layout_marginRight="16dp"
                 android:checkedButton="@id/rb_male"
                 android:orientation="vertical">
@@ -152,11 +153,13 @@
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:id="@+id/one"
                     android:text="Inactive : Never or rarely include physical acitvity in your day."
                     android:textColor="@color/black" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
+                    android:id="@+id/two"
                     android:layout_height="wrap_content"
                     android:text="Somewhat active : include light activity or moderate activity about two to three times a week."
                     android:textColor="@color/black" />
@@ -164,11 +167,13 @@
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:id="@+id/three"
                     android:text="Active : include at least 30 minutes of moderate activity most days of the week,or 20 minutes of vigorous activity at least three days a week."
                     android:textColor="@color/black" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
+                    android:id="@+id/four"
                     android:layout_height="wrap_content"
                     android:text="Very active : include large amounts of moderate or vigorous activity in your day. "
                     android:textColor="@color/black" />

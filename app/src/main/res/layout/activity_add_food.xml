@@ -126,6 +126,27 @@
                 android:paddingLeft="16dp"
                 android:singleLine="true"
                 android:textSize="14sp" />
+            <com.project.trackmydayapp.fonthelper.RobotoTextViewBold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="16dp"
+                android:text="Calories Factor"
+
+                android:textSize="14sp" />
+
+            <com.project.trackmydayapp.fonthelper.FontEditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg"
+                android:ellipsize="end"
+                android:id="@+id/ed_calories_factor"
+                android:inputType="numberDecimal"
+                android:hint="Enter Calories Factor"
+                android:paddingLeft="16dp"
+                android:singleLine="true"
+                android:textSize="14sp" />
 
             <com.project.trackmydayapp.fonthelper.RobotoTextViewBold
                 android:layout_width="match_parent"

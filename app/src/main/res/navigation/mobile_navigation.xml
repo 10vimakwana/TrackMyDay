@@ -31,6 +31,6 @@
     <fragment
         android:id="@+id/nav_feedback"
         android:name="com.project.trackmydayapp.activity.admin.fragment.AllFeedbackFragment"
-        android:label="@string/menu_slideshow"
+        android:label="Feedback"
         tools:layout="@layout/fragment_all_feedback" />
 </navigation>

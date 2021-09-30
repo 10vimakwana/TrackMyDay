@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_dashboard">
+    app:startDestination="@+id/nav_home">
 
     <fragment
-        android:id="@+id/nav_dashboard"
+        android:id="@+id/nav_home"
         android:name="com.project.trackmydayapp.activity.user.fragment.CalculateFragment"
         android:label="Dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_calculate" />
 
     <fragment
         android:id="@+id/nav_slideshow"
@@ -18,7 +18,7 @@
         tools:layout="@layout/fragment_slideshow" />
     <fragment
         android:id="@+id/nav_feedback"
-        android:name="com.project.trackmydayapp.activity.admin.fragment.slideshow.SlideshowFragment"
+        android:name="com.project.trackmydayapp.activity.user.fragment.FeedbackFragment"
         android:label="Feedback"
         tools:layout="@layout/fragment_feedback" />
 </navigation>
