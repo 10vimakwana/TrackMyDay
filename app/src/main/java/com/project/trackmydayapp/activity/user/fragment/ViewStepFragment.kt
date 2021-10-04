@@ -1,5 +1,7 @@
 package com.project.trackmydayapp.activity.user.fragment
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -18,7 +20,7 @@ import com.project.trackmydayapp.databinding.FragmentCalculateBinding
 import com.project.trackmydayapp.helper.SessionManager
 
 
-class ViewStepFragment : Fragment() {
+class ViewStepFragment : Fragment(), StepAdapter.onClick {
 
 
     private lateinit var ry_step: RecyclerView
@@ -52,7 +54,7 @@ class ViewStepFragment : Fragment() {
             txt_nodata_step.visibility = View.VISIBLE
 
         }
-        val obj_adapter = StepAdapter(activity?.baseContext, db.viewSteps(sessionManager.userId!!.toInt(), date.toString()));
+        val obj_adapter = StepAdapter(activity?.baseContext, db.viewSteps(sessionManager.userId!!.toInt(), date.toString()),this);
         ry_step.adapter = obj_adapter
 
 
@@ -63,5 +65,30 @@ class ViewStepFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun deleteSteps(stepid: Int) {
+        val db: DatabaseHandler = DatabaseHandler(activity?.applicationContext);
+        val sessionManager: SessionManager = activity?.let { SessionManager.getInstance(it) }!!
+        val date = arguments?.get("date");
+        val alertDialog: AlertDialog = android.app.AlertDialog.Builder(context).create()
+        alertDialog.setTitle("Alert")
+        alertDialog.setMessage("Alert message to be shown")
+        alertDialog.setButton(
+            AlertDialog.BUTTON_POSITIVE,
+            "OK",
+            DialogInterface.OnClickListener { dialog, which ->
+                db.deleteSteps(stepid)
+                ry_step.removeAllViews()
+                val obj_adapter = StepAdapter(activity?.baseContext, db.viewSteps(sessionManager.userId!!.toInt(), date.toString()),this);
+                ry_step.adapter = obj_adapter
+            })
+        alertDialog.setButton(
+            AlertDialog.BUTTON_NEGATIVE,
+            "Cancel",
+            DialogInterface.OnClickListener { dialog, which ->
+                alertDialog.dismiss()
+            })
+        alertDialog.show()
     }
 }

@@ -1,5 +1,6 @@
 package com.project.trackmydayapp.activity.admin
 
+import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,6 +11,8 @@ import android.widget.Toast
 import com.project.trackmydayapp.R
 import com.project.trackmydayapp.database.DatabaseHandler
 import com.project.trackmydayapp.model.FoodModel
+import android.content.DialogInterface
+
 
 class FoodDetailActivity : AppCompatActivity() {
     lateinit var txt_dt_foodname: TextView;
@@ -69,14 +72,30 @@ class FoodDetailActivity : AppCompatActivity() {
         // handle arrow click here
         if (item.getItemId() === android.R.id.home) {
             finish() // close this activity and return to preview activity (if there is any)
-        }else if (item.itemId == R.id.ic_menu_delete){
+        } else if (item.itemId == R.id.ic_menu_delete) {
+            val alertDialog: AlertDialog = android.app.AlertDialog.Builder(this).create()
+            alertDialog.setTitle("Alert")
+            alertDialog.setMessage("Alert message to be shown")
+            alertDialog.setButton(
+                AlertDialog.BUTTON_POSITIVE,
+                "OK",
+                DialogInterface.OnClickListener { dialog, which ->
+                    val foodid = intent.getIntExtra("foodid", 0);
+                    db.deleteFood(foodid)
+                    Toast.makeText(this, "Food Delete Successfuly", Toast.LENGTH_SHORT).show()
+                    onBackPressed()
+                })
+            alertDialog.setButton(
+                AlertDialog.BUTTON_NEGATIVE,
+                "Cancel",
+                DialogInterface.OnClickListener { dialog, which ->
+                    alertDialog.dismiss()
+                })
+            alertDialog.show()
+
+        } else if (item.itemId == R.id.ic_menu_edit) {
             val foodid = intent.getIntExtra("foodid", 0);
-            db.deleteFood(foodid)
-            Toast.makeText(this, "Food Delete Successfuly", Toast.LENGTH_SHORT).show()
-            onBackPressed()
-        }else if (item.itemId == R.id.ic_menu_edit){
-            val foodid = intent.getIntExtra("foodid", 0);
-            startActivity(Intent(this, FoodEditActivity::class.java).putExtra("foodid",foodid))
+            startActivity(Intent(this, FoodEditActivity::class.java).putExtra("foodid", foodid))
             finish()
 
         }

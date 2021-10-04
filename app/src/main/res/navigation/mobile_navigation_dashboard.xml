@@ -18,6 +18,11 @@
         tools:layout="@layout/fragment_chart" />
 
     <fragment
+        android:id="@+id/nav_feedbackreply"
+        android:name="com.project.trackmydayapp.activity.user.fragment.AdminFeedbackFragment"
+        android:label="Admin Feedback"
+        tools:layout="@layout/fragment_admi_feedback" />
+    <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.project.trackmydayapp.activity.admin.fragment.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"

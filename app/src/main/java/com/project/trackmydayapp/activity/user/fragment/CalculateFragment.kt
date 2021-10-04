@@ -47,6 +47,9 @@ class CalculateFragment : Fragment() {
     private lateinit var btn_view: TextView
     private lateinit var txt_calories: TextView
     private lateinit var btn_today: TextView
+    private lateinit var txt_step_calories: TextView
+    private lateinit var txt_receipe_calories: TextView
+    private lateinit var txt_target_calories: TextView
 
     private var _binding: FragmentCalculateBinding? = null
     var flag = true
@@ -72,6 +75,9 @@ class CalculateFragment : Fragment() {
         fab4 = root.findViewById(R.id.fab4) as FloatingActionButton
         ed_date = root.findViewById(R.id.ed_date) as EditText
         txt_calories = root.findViewById(R.id.txt_calories) as TextView
+        txt_receipe_calories = root.findViewById(R.id.txt_receipe_calories) as TextView
+        txt_step_calories = root.findViewById(R.id.txt_step_calories) as TextView
+        txt_target_calories = root.findViewById(R.id.txt_target_calories) as TextView
 
         val c = Calendar.getInstance()
         val year = c.get(Calendar.YEAR)
@@ -136,13 +142,12 @@ class CalculateFragment : Fragment() {
             val formattedDate = df.format(c.time)
             var dt: Date? = Date()
             c.time = dt
-            c.add(Calendar.DATE, -30)
-            c.add(Calendar.MONTH, 1)
+            c.add(Calendar.DATE, -1)
             val beforedate = df.format(c.time)
 
             val recipelist = db.viewRecipe(sessionManager.userId!!.toInt(), beforedate)
             for (item in recipelist) {
-                println(item)
+                println("geting " +item)
                 val status = db.addRecipe(
                     sessionManager.userId.toString().toInt(),
                     item.foodId,
@@ -210,8 +215,12 @@ class CalculateFragment : Fragment() {
                 val df = SimpleDateFormat("dd/MM/yyyy")
                 val formattedDate = df.format(c.time)
 
+                val cal2place:Double = String.format("%.2f", cal).toDouble()
+
+                txt_target_calories.text = ""+cal2place
                 val totalcalories =
                     db.viewRecipeCal(sessionManager.userId.toString().toInt(), formattedDate)
+                txt_receipe_calories.text = ""+totalcalories
                 val t_cal = totalcalories + cal
                 val totalsteps =
                     db.viewStepsCal(sessionManager.userId.toString().toInt(), formattedDate)
@@ -243,6 +252,7 @@ class CalculateFragment : Fragment() {
                 } else {
                     stepcalories = 500
                 }
+                txt_step_calories.text =""+ stepcalories
                 val gradtotal = t_cal - stepcalories
                 val total2place:Double = String.format("%.2f", gradtotal).toDouble()
                 txt_calories.text = "" + total2place
@@ -272,9 +282,13 @@ class CalculateFragment : Fragment() {
                 val c = Calendar.getInstance()
                 val df = SimpleDateFormat("dd/MM/yyyy")
                 val formattedDate = df.format(c.time)
+                val cal2place:Double = String.format("%.2f", cal).toDouble()
+
+                txt_target_calories.text = ""+cal2place
 
                 val totalcalories =
                     db.viewRecipeCal(sessionManager.userId.toString().toInt(), formattedDate)
+                txt_receipe_calories.text = ""+totalcalories
                 val t_cal = totalcalories + cal
 
                 val totalsteps =
@@ -307,6 +321,8 @@ class CalculateFragment : Fragment() {
                 } else {
                     stepcalories = 500
                 }
+                txt_step_calories.text =""+ stepcalories
+
                 val gradtotal = t_cal - stepcalories
                 val total2place:Double = String.format("%.2f", gradtotal).toDouble()
                 txt_calories.text = "" + total2place

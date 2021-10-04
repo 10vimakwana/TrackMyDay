@@ -48,6 +48,9 @@ class DatabaseHandler(val context: Context?) :
         private val KEY_FEEDBACK_USERID = "FeedBackUserId"
         private val KEY_FEEDBACK_TITLE = "FeedbackTitle"
         private val KEY_FEEDBACK_DES = "FeedBack"
+        private val KEY_FEEDBACK_ISREPLYBYADMIN = "FeedbackIsReply"
+        private val KEY_FEEDBACK_ISSEND = "FeedbackIsSend"
+        private val KEY_FEEDBACK_REPLY = "FeedbackReply"
 
         private val STEP_TABLE = "StepTable"
         private val KEY_STEP_ID = "StepId"
@@ -77,7 +80,7 @@ class DatabaseHandler(val context: Context?) :
         val CREATE_FOOOD_TABLE =
             ("CREATE TABLE " + FOOD_TABLE + "(" + KEY_FOOD_ID + " INTEGER PRIMARY KEY," + KEY_FOOD_NAME + " TEXT," + KEY_COMMON_NAME + " TEXT," + KEY_DESCRIPTION + " TEXT," + KEY_NITROGEN_FACTOR + " REAL," + KEY_FAT_FACTOR + " REAL," + KEY_CALORIES_FACTOR + " INTEGER," + KEY_SPECIFIC_GRAVITY + " REAL," + KEY_SAMPLING_DETAILS + " TEXT," + KEY_ANALYSED_PORTION + " REAL," + KEY_UNANALYSED_PORTION + " REAL" + ")")
         val CREATE_FEEDBACK_TABLE =
-            ("CREATE TABLE " + FEEDBACK_TABLE + "(" + KEY_FEEDBACK_ID + " INTEGER PRIMARY KEY," + KEY_FEEDBACK_USERID + " INTEGER," + KEY_FEEDBACK_TITLE + " TEXT," + KEY_FEEDBACK_DES + " TEXT" + ")")
+            ("CREATE TABLE " + FEEDBACK_TABLE + "(" + KEY_FEEDBACK_ID + " INTEGER PRIMARY KEY," + KEY_FEEDBACK_USERID + " INTEGER," + KEY_FEEDBACK_TITLE + " TEXT," + KEY_FEEDBACK_REPLY + " TEXT," + KEY_FEEDBACK_ISREPLYBYADMIN + " INTEGER," + KEY_FEEDBACK_ISSEND + " INTEGER," + KEY_FEEDBACK_DES + " TEXT" + ")")
         val CREATE_STEP_TABLE =
             ("CREATE TABLE " + STEP_TABLE + "(" + KEY_STEP_ID + " INTEGER PRIMARY KEY," + KEY_STEP_USERID + " INTEGER," + KEY_STEPS + " INTEGER," + KEY_STEP_DATE + " TEXT" + ")")
         val CREATE_RECIPE_TABLE =
@@ -93,16 +96,77 @@ class DatabaseHandler(val context: Context?) :
         contentValues.put(KEY_REG_PASSWORD, "123456")
         val success = db?.insert(REGISTRATION_TABLE, null, contentValues)
         val food1 = ContentValues()
-//        food1.put(KEY_FOOD_NAME, foodname)
-//        food1.put(KEY_COMMON_NAME, commonname)
-//        food1.put(KEY_DESCRIPTION, description)
-//        food1.put(KEY_NITROGEN_FACTOR, nitrogen)
-//        food1.put(KEY_FAT_FACTOR, fat)
-//        food1.put(KEY_SPECIFIC_GRAVITY, specificgravity)
-//        food1.put(KEY_ANALYSED_PORTION, analysedportion)
-//        food1.put(KEY_UNANALYSED_PORTION, unanalysedportion)
-//        food1.put(KEY_SAMPLING_DETAILS, samplingdetails)
-        val food1suc = db?.insert(REGISTRATION_TABLE, null, food1)
+        food1.put(KEY_FOOD_NAME, "Cardamom seed, dried, ground")
+        food1.put(KEY_COMMON_NAME, "Elettaria cardamom")
+        food1.put(
+            KEY_DESCRIPTION,
+            "Ground spice commonly used in Indian cooking and drinks, in Middle Eastern cooking and in Scandinavian baking"
+        )
+        food1.put(KEY_NITROGEN_FACTOR, 6.25)
+        food1.put(KEY_FAT_FACTOR, 0.956)
+        food1.put(KEY_CALORIES_FACTOR, 50)
+        food1.put(KEY_SPECIFIC_GRAVITY, 0)
+        food1.put(KEY_ANALYSED_PORTION, 100)
+        food1.put(KEY_UNANALYSED_PORTION, 0)
+        food1.put(
+            KEY_SAMPLING_DETAILS,
+            "The majority of nutrient data were borrowed from USDA SR28, 02006 - Spices, cardamom. Proximates (starch, total sugars), vitamins (alpha-tocopherol, beta-carotene, folate) and Se were borrowed from Indian Food Composition Tables 2017, G020 - Cardamom, green. Dry matter adjustment was applied to starch and sugar. Tryptophan was imputed from dried fenugreek seed. Alcohol, vitamins (B12, folic acid, retinol, D), I, caffeine and cholesterol were imputed zero. Note low sum of proximates - data should be used with caution."
+        )
+        db?.insert(FOOD_TABLE, null, food1)
+        val food2 = ContentValues()
+        food2.put(KEY_FOOD_NAME, "Chilli (chili), dried, ground")
+        food2.put(KEY_COMMON_NAME, "Capsicum spp")
+        food2.put(
+            KEY_DESCRIPTION,
+            "Dried and ground red pepper, characterised by a hot sensation when consumed as a spice."
+        )
+        food2.put(KEY_NITROGEN_FACTOR, 6.25)
+        food2.put(KEY_FAT_FACTOR, 0.8)
+        food2.put(KEY_CALORIES_FACTOR, 30)
+        food2.put(KEY_SPECIFIC_GRAVITY, 0)
+        food2.put(KEY_ANALYSED_PORTION, 100)
+        food2.put(KEY_UNANALYSED_PORTION, 0)
+        food2.put(
+            KEY_SAMPLING_DETAILS,
+            "The majority of nutrient data was borrowed USDA SR28, 02009 - Spices, chili powder. Iodine was borrowed from NZ FOODfiles 2014, P28 - Spice, chilli powder. Alcohol, vitamins (B12, folic acid, retinol, C, D), caffeine and cholesterol were imputed zero."
+        )
+        db?.insert(FOOD_TABLE, null, food2)
+        val food3 = ContentValues()
+        food3.put(KEY_FOOD_NAME, "Cinnamon, dried, ground")
+        food3.put(KEY_COMMON_NAME, "Cinnamomum verum, C zeylanicum or C. aromaticum")
+        food3.put(
+            KEY_DESCRIPTION,
+            "Dried and ground bark or quills of Cinnamomum verum, C. zeylanicum or C. aromaticum, used as a spice."
+        )
+        food3.put(KEY_NITROGEN_FACTOR, 6.25)
+        food3.put(KEY_FAT_FACTOR, 0.956)
+        food3.put(KEY_CALORIES_FACTOR, 40)
+        food3.put(KEY_SPECIFIC_GRAVITY, 0)
+        food3.put(KEY_ANALYSED_PORTION, 100)
+        food3.put(KEY_UNANALYSED_PORTION, 0)
+        food3.put(
+            KEY_SAMPLING_DETAILS,
+            "The majority of nutrient data was borrowed USDA SR28, 02009 - Spices, chili powder. Iodine was borrowed from NZ FOODfiles 2014, P28 - Spice, chilli powder. Alcohol, vitamins (B12, folic acid, retinol, C, D), caffeine and cholesterol were imputed zero."
+        )
+        db?.insert(FOOD_TABLE, null, food3)
+       val food4 = ContentValues()
+        food4.put(KEY_FOOD_NAME, "Cloves, dried, ground")
+        food4.put(KEY_COMMON_NAME, "Syzygium aromaticum")
+        food4.put(
+            KEY_DESCRIPTION,
+            "Dried and ground, unopened flower buds of Syzygium aromaticum, used as a spice."
+        )
+        food4.put(KEY_NITROGEN_FACTOR, 6.25)
+        food4.put(KEY_FAT_FACTOR, 0.956)
+        food4.put(KEY_CALORIES_FACTOR, 40)
+        food4.put(KEY_SPECIFIC_GRAVITY, 0)
+        food4.put(KEY_ANALYSED_PORTION, 100)
+        food4.put(KEY_UNANALYSED_PORTION, 0)
+        food4.put(
+            KEY_SAMPLING_DETAILS,
+            "The majority of nutrient data were borrowed from USDA SR28, 02011 - Spices, cloves, ground. Iodine was borrowed from NZ FOODfiles 2014, P30 - Spice, cloves, ground. Alcohol, vitamins (B12, folic acid, retinol, D), caffeine and cholesterol were imputed zero."
+        )
+        db?.insert(FOOD_TABLE, null, food4)
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
@@ -118,12 +182,21 @@ class DatabaseHandler(val context: Context?) :
 
 
     ///method to insert data
-    fun addFeedback(userid: Int, title: String, description: String): Long {
+    fun addFeedback(
+        userid: Int,
+        title: String,
+        description: String,
+        isadmin: Int,
+        isSend: Int
+    ): Long {
         val dbase = this.writableDatabase
         val contentValues = ContentValues()
         contentValues.put(KEY_FEEDBACK_USERID, userid)
         contentValues.put(KEY_FEEDBACK_TITLE, title)
         contentValues.put(KEY_FEEDBACK_DES, description)
+        contentValues.put(KEY_FEEDBACK_ISREPLYBYADMIN, isadmin)
+        contentValues.put(KEY_FEEDBACK_ISSEND, isSend)
+        contentValues.put(KEY_FEEDBACK_REPLY, "")
         // Inserting Row
         val success = dbase.insert(FEEDBACK_TABLE, null, contentValues)
         //2nd argument is String containing nullColumnHack
@@ -428,7 +501,16 @@ class DatabaseHandler(val context: Context?) :
                 calories = cursor.getInt(cursor.getColumnIndex(KEY_RECIPE_CALORIES))
                 recipeName = cursor.getString(cursor.getColumnIndex(KEY_RECIPE_NAME))
                 recipeDate = cursor.getString(cursor.getColumnIndex(KEY_RECIPE_DATE))
-                userlist.add(RecipeModel(recipeId, userId, foodid,calories, recipeName, recipeDate))
+                userlist.add(
+                    RecipeModel(
+                        recipeId,
+                        userId,
+                        foodid,
+                        calories,
+                        recipeName,
+                        recipeDate
+                    )
+                )
             } while (cursor.moveToNext())
         }
         return userlist
@@ -496,13 +578,75 @@ class DatabaseHandler(val context: Context?) :
         var feedbackId: Int
         var title: String
         var feedback: String
+        var isAdmin: Int
+        var isSend: Int
+        var reply: String
         if (cursor.moveToFirst()) {
             do {
                 userId = cursor.getInt(cursor.getColumnIndex(KEY_FEEDBACK_USERID))
                 feedbackId = cursor.getInt(cursor.getColumnIndex(KEY_FEEDBACK_ID))
                 title = cursor.getString(cursor.getColumnIndex(KEY_FEEDBACK_TITLE))
                 feedback = cursor.getString(cursor.getColumnIndex(KEY_FEEDBACK_DES))
-                userlist.add(FeedbackModel(userId, feedbackId, title, feedback))
+                isAdmin = cursor.getInt(cursor.getColumnIndex(KEY_FEEDBACK_ISREPLYBYADMIN))
+                isSend = cursor.getInt(cursor.getColumnIndex(KEY_FEEDBACK_ISSEND))
+                reply = cursor.getString(cursor.getColumnIndex(KEY_FEEDBACK_REPLY))
+                userlist.add(
+                    FeedbackModel(
+                        userId,
+                        feedbackId,
+                        title,
+                        feedback,
+                        reply,
+                        isAdmin,
+                        isSend
+                    )
+                )
+            } while (cursor.moveToNext())
+        }
+        return userlist
+    }
+
+    @SuppressLint("Range")
+    fun viewFeedback(userid: Int): ArrayList<FeedbackModel> {
+        val userlist: ArrayList<FeedbackModel> = ArrayList<FeedbackModel>()
+        val selectQuery =
+            "SELECT  * FROM $FEEDBACK_TABLE" + " Where " + KEY_FEEDBACK_USERID + " = \'" + userid + "\' "
+
+        val db = this.readableDatabase
+        var cursor: Cursor? = null
+        try {
+            cursor = db.rawQuery(selectQuery, null)
+        } catch (e: SQLiteException) {
+            db.execSQL(selectQuery)
+            return ArrayList()
+        }
+        var userId: Int
+        var feedbackId: Int
+        var title: String
+        var feedback: String
+        var isAdmin: Int
+        var isSend: Int
+        var feedback_reply: String
+        if (cursor.moveToFirst()) {
+            do {
+                userId = cursor.getInt(cursor.getColumnIndex(KEY_FEEDBACK_USERID))
+                feedbackId = cursor.getInt(cursor.getColumnIndex(KEY_FEEDBACK_ID))
+                title = cursor.getString(cursor.getColumnIndex(KEY_FEEDBACK_TITLE))
+                feedback = cursor.getString(cursor.getColumnIndex(KEY_FEEDBACK_DES))
+                isAdmin = cursor.getInt(cursor.getColumnIndex(KEY_FEEDBACK_ISREPLYBYADMIN))
+                isSend = cursor.getInt(cursor.getColumnIndex(KEY_FEEDBACK_ISSEND))
+                feedback_reply = cursor.getString(cursor.getColumnIndex(KEY_FEEDBACK_REPLY))
+                userlist.add(
+                    FeedbackModel(
+                        userId,
+                        feedbackId,
+                        title,
+                        feedback,
+                        feedback_reply,
+                        isAdmin,
+                        isSend
+                    )
+                )
             } while (cursor.moveToNext())
         }
         return userlist
@@ -585,6 +729,51 @@ class DatabaseHandler(val context: Context?) :
 
     //method to read data
     @SuppressLint("Range")
+    fun isFeedbackSend(userid: Int): Int {
+        val selectQuery =
+            "SELECT  * FROM $FEEDBACK_TABLE" + " Where " + KEY_FEEDBACK_USERID + " = \'" + userid + "\'"
+        val db = this.readableDatabase
+        var cursor: Cursor? = null
+        try {
+            cursor = db.rawQuery(selectQuery, null)
+        } catch (e: SQLiteException) {
+            db.execSQL(selectQuery)
+            return 0;
+        }
+        if (cursor.moveToFirst()) {
+            do {
+                return 1;
+            } while (cursor.moveToNext())
+        }
+        return 0
+    }
+
+    //method to read data
+    @SuppressLint("Range")
+    fun isFeedbackReply(userid: Int): Int {
+        val selectQuery =
+            "SELECT  * FROM $FEEDBACK_TABLE" + " Where " + KEY_FEEDBACK_USERID + " = \'" + userid + "\'"
+        val db = this.readableDatabase
+        var cursor: Cursor? = null
+        try {
+            cursor = db.rawQuery(selectQuery, null)
+        } catch (e: SQLiteException) {
+            db.execSQL(selectQuery)
+            return 0;
+        }
+        var isreply: Int
+        if (cursor.moveToFirst()) {
+            do {
+                isreply = cursor.getInt(cursor.getColumnIndex(KEY_FEEDBACK_ISREPLYBYADMIN))
+                return isreply;
+            } while (cursor.moveToNext())
+        }
+
+        return 0
+    }
+
+    //method to read data
+    @SuppressLint("Range")
     fun getUserId(): Int {
         val selectQuery =
             "SELECT *  FROM " + REGISTRATION_TABLE + " WHERE  " + KEY_REG_ID + " = (SELECT MAX(" + KEY_REG_ID + ")  FROM " + REGISTRATION_TABLE + " );"
@@ -662,6 +851,36 @@ class DatabaseHandler(val context: Context?) :
         return success
     }
 
+
+    //method to update data
+    fun updateFeedbackReply(
+        feedid: Int,
+        userid: Int,
+        title: String,
+        description: String,
+        isadmin: Int,
+        isSend: Int,
+        reply: String,
+    ): Int {
+        val db = this.writableDatabase
+        val contentValues = ContentValues()
+        contentValues.put(KEY_FEEDBACK_USERID, userid)
+        contentValues.put(KEY_FEEDBACK_TITLE, title)
+        contentValues.put(KEY_FEEDBACK_DES, description)
+        contentValues.put(KEY_FEEDBACK_ISREPLYBYADMIN, isadmin)
+        contentValues.put(KEY_FEEDBACK_ISSEND, isSend)
+        contentValues.put(KEY_FEEDBACK_REPLY, reply)
+        val success =
+            db.update(
+                FEEDBACK_TABLE,
+                contentValues,
+                KEY_FEEDBACK_ID + " = '" + feedid + "'",
+                null
+            )
+        db.close()
+        return success
+    }
+
     //method to delete data
     fun deleteFood(foodid: Int): Int {
         val db = this.writableDatabase
@@ -671,6 +890,28 @@ class DatabaseHandler(val context: Context?) :
         val success = db.delete(FOOD_TABLE, KEY_FOOD_ID + "= ' " + foodid + " ' ", null)
         //2nd argument is String containing nullColumnHack  
         db.close() // Closing database connection  
+        return success
+    }
+
+    fun deleteSteps(stepid: Int): Int {
+        val db = this.writableDatabase
+        val contentValues = ContentValues()
+        //   contentValues.put(KEY_ID, userModel.userId)
+        // Deleting Row
+        val success = db.delete(STEP_TABLE, KEY_STEP_ID + "= ' " + stepid + " ' ", null)
+        //2nd argument is String containing nullColumnHack
+        db.close() // Closing database connection
+        return success
+    }
+
+    fun deleteRecipes(recipeid: Int): Int {
+        val db = this.writableDatabase
+        val contentValues = ContentValues()
+        //   contentValues.put(KEY_ID, userModel.userId)
+        // Deleting Row
+        val success = db.delete(RECIPE_TABLE, KEY_RECIPE_ID + "= ' " + recipeid + " ' ", null)
+        //2nd argument is String containing nullColumnHack
+        db.close() // Closing database connection
         return success
     }
 

@@ -17,6 +17,11 @@
             android:icon="@drawable/ic_chart"
             android:title="Chart" />
         <item
+            android:id="@+id/nav_feedbackreply"
+            android:icon="@drawable/ic_menu_person"
+            android:title="Admin Feedback" />
+
+        <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_info"
             android:title="About us" />

@@ -40,6 +40,18 @@ class FeedbackFragment : Fragment() {
         ed_fedback_title = root.findViewById(R.id.ed_fedback_title);
         ed_feedback = root.findViewById(R.id.ed_feedback);
         btn_feedback = root.findViewById(R.id.btn_feedback);
+        val db: DatabaseHandler = DatabaseHandler(activity);
+        val sessionManager: SessionManager = activity?.let { it1 ->
+            SessionManager.getInstance(
+                it1
+            )
+        }!!
+
+        if (db.isFeedbackSend(sessionManager.userId.toString().toInt())==1){
+            btn_feedback.isEnabled = false
+        }else{
+            btn_feedback.isEnabled = true
+        }
 
         btn_feedback.setOnClickListener {
             if (ed_fedback_title.text.isEmpty()) {
@@ -47,18 +59,13 @@ class FeedbackFragment : Fragment() {
             } else if (ed_feedback.text.isEmpty()) {
                 ed_feedback.setError("Enter Feedback")
             } else {
-                val db: DatabaseHandler = DatabaseHandler(activity);
-                val sessionManager: SessionManager = activity?.let { it1 ->
-                    SessionManager.getInstance(
-                        it1
-                    )
-                }!!
-
                 val isAdded =
                     db.addFeedback(
                         sessionManager.userId.toString().toInt(),
                         ed_fedback_title.text.toString(),
-                        ed_feedback.text.toString()
+                        ed_feedback.text.toString(),
+                        0,
+                        1
                     );
                 if (isAdded > 0) {
                     Toast.makeText(activity, "Feedback Save Successfully", Toast.LENGTH_SHORT)

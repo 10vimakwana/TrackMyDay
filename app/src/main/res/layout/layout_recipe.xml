@@ -11,11 +11,28 @@
         app:contentPadding="10dp"
         android:layout_height="wrap_content">
 
-        <com.project.trackmydayapp.fonthelper.RobotoTextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:id="@+id/txt_recipeName"/>
+            android:layout_height="wrap_content">
+            <com.project.trackmydayapp.fonthelper.RobotoTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:layout_weight="0.15"
+                android:layout_gravity="center"
+                android:id="@+id/txt_recipeName"/>
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_deletefooditem"
+                android:padding="10dp"
+                android:id="@+id/iv_delete_recepie"
+                android:layout_weight="1"
+                android:layout_alignParentRight="true"
+                />
+        </LinearLayout>
 
 
     </androidx.cardview.widget.CardView>

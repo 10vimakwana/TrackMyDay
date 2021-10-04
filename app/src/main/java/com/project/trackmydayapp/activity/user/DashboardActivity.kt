@@ -51,32 +51,38 @@ class DashboardActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_dashboard)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        appBarConfiguration = AppBarConfiguration(
-            setOf(
-              R.id.nav_dashboard,  R.id.nav_home,R.id.nav_chart, R.id.nav_all_user, R.id.nav_slideshow,R.id.nav_feedback
-            ), drawerLayout
-        )
+        val db: DatabaseHandler = DatabaseHandler(this);
+            appBarConfiguration = AppBarConfiguration(
+                setOf(
+                    R.id.nav_dashboard,
+                    R.id.nav_home,
+                    R.id.nav_chart,
+                    R.id.nav_all_user,
+                    R.id.nav_feedbackreply,
+                    R.id.nav_slideshow,
+                    R.id.nav_feedback
+                ), drawerLayout
+            )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
         var profilelist: ArrayList<UserProfileModel> = ArrayList<UserProfileModel>()
-        val db: DatabaseHandler = DatabaseHandler(this);
         profilelist = db.viewProfileUser(sessionManager.userId.toString().toInt());
 
-        val headerView : View = navView.getHeaderView(0)
-        val navUsername : TextView = headerView.findViewById(R.id.tv_dashboard_user)
-        val navUserEmail : TextView = headerView.findViewById(R.id.tv_dashboard_email)
+        val headerView: View = navView.getHeaderView(0)
+        val navUsername: TextView = headerView.findViewById(R.id.tv_dashboard_user)
+        val navUserEmail: TextView = headerView.findViewById(R.id.tv_dashboard_email)
 
-        navUsername.text = profilelist.get(0).firstname.toString()+"'s Dashboard"
+        navUsername.text = profilelist.get(0).firstname.toString() + "'s Dashboard"
         navUserEmail.text = profilelist.get(0).firstname.toString()
 
     }
 
-   /* override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.dashboard, menu)
-        return true
-    }
-*/
+    /* override fun onCreateOptionsMenu(menu: Menu): Boolean {
+         // Inflate the menu; this adds items to the action bar if it is present.
+         menuInflater.inflate(R.menu.dashboard, menu)
+         return true
+     }
+ */
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_dashboard)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
