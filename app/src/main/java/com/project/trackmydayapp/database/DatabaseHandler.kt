@@ -19,6 +19,7 @@ class DatabaseHandler(val context: Context?) :
         private val KEY_REG_ID = "Reg_id"
         private val KEY_REG_EMAIL = "Email"
         private val KEY_REG_PASSWORD = "Password"
+        private val KEY_REG_OTP = "OTP"
 
         private val PROFILE_TABLE = "ProfileTable"
         private val KEY_PROFILE_ID = "ProfileId"
@@ -74,7 +75,7 @@ class DatabaseHandler(val context: Context?) :
         // TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
         //creating table with fields
         val CREATE_REG_TABLE =
-            ("CREATE TABLE " + REGISTRATION_TABLE + "(" + KEY_REG_ID + " INTEGER PRIMARY KEY," + KEY_REG_EMAIL + " TEXT," + KEY_REG_PASSWORD + " TEXT" + ")")
+            ("CREATE TABLE " + REGISTRATION_TABLE + "(" + KEY_REG_ID + " INTEGER PRIMARY KEY," + KEY_REG_EMAIL + " TEXT," + KEY_REG_OTP + " INTEGER," + KEY_REG_PASSWORD + " TEXT" + ")")
         val CREATE_PROFILE_TABLE =
             ("CREATE TABLE " + PROFILE_TABLE + "(" + KEY_PROFILE_ID + " INTEGER PRIMARY KEY," + KEY_PROFILE_REGID + " INTEGER," + KEY_FIRST_NAME + " TEXT," + KEY_HEIGHT + " REAL," + KEY_WEIGHT + " REAL," + KEY_AGE + " INTEGER," + KEY_ACTIVITY + " TEXT," + KEY_GENDER + " TEXT" + ")")
         val CREATE_FOOOD_TABLE =
@@ -149,7 +150,7 @@ class DatabaseHandler(val context: Context?) :
             "The majority of nutrient data was borrowed USDA SR28, 02009 - Spices, chili powder. Iodine was borrowed from NZ FOODfiles 2014, P28 - Spice, chilli powder. Alcohol, vitamins (B12, folic acid, retinol, C, D), caffeine and cholesterol were imputed zero."
         )
         db?.insert(FOOD_TABLE, null, food3)
-       val food4 = ContentValues()
+        val food4 = ContentValues()
         food4.put(KEY_FOOD_NAME, "Cloves, dried, ground")
         food4.put(KEY_COMMON_NAME, "Syzygium aromaticum")
         food4.put(
@@ -167,6 +168,115 @@ class DatabaseHandler(val context: Context?) :
             "The majority of nutrient data were borrowed from USDA SR28, 02011 - Spices, cloves, ground. Iodine was borrowed from NZ FOODfiles 2014, P30 - Spice, cloves, ground. Alcohol, vitamins (B12, folic acid, retinol, D), caffeine and cholesterol were imputed zero."
         )
         db?.insert(FOOD_TABLE, null, food4)
+        val food5 = ContentValues()
+        food5.put(KEY_FOOD_NAME, "Coriander seed, dried, ground")
+        food5.put(KEY_COMMON_NAME, "Coriandrum sativum")
+        food5.put(
+            KEY_DESCRIPTION,
+            "Dried and ground fruit or seed of Coriandrum sativum, used as a spice."
+        )
+        food5.put(KEY_NITROGEN_FACTOR, 6.25)
+        food5.put(KEY_FAT_FACTOR, 0.956)
+        food5.put(KEY_CALORIES_FACTOR, 40)
+        food5.put(KEY_SPECIFIC_GRAVITY, 0)
+        food5.put(KEY_ANALYSED_PORTION, 100)
+        food5.put(KEY_UNANALYSED_PORTION, 0)
+        food5.put(
+            KEY_SAMPLING_DETAILS,
+            "The majority of nutrient data were borrowed from USDA SR28, 02013 - Spices, coriander seed. Proximates (starch, total sugars) and vitamins (B6, alpha-tocopherol, beta-carotene) were borrowed from Indian FCDB 2011-13, G024 - Coriander seeds. Iodine was borrowed from NZ FOODfiles 2014, P32 - Seed, coriander. Tryptophan was imputed from dried fenugreek seed. Alcohol, vitamins (B12, folic acid, retinol, D), caffeine and cholesterol were imputed zero. Note low sum of proximates - data should be used with caution."
+        )
+        db?.insert(FOOD_TABLE, null, food5)
+        val food6 = ContentValues()
+        food6.put(KEY_FOOD_NAME, "Cumin (cummin) seed, dried, ground")
+        food6.put(KEY_COMMON_NAME, "Cuminum cymimum")
+        food6.put(
+            KEY_DESCRIPTION,
+            "Dried and ground fruit or seeds of Cuminum cymimum, used as a spice.\n"
+        )
+        food6.put(KEY_NITROGEN_FACTOR, 6.25)
+        food6.put(KEY_FAT_FACTOR, 0.956)
+        food6.put(KEY_CALORIES_FACTOR, 40)
+        food6.put(KEY_SPECIFIC_GRAVITY, 0)
+        food6.put(KEY_ANALYSED_PORTION, 100)
+        food6.put(KEY_UNANALYSED_PORTION, 0)
+        food6.put(
+            KEY_SAMPLING_DETAILS,
+            "The majority of nutrient data were borrowed from USDA SR28, 02014 - Spices, cumin seed. Iodine was borrowed from NZ FOODfiles 2014, P33 - Seed, cumin. Tryptophan was imputed from dried fenugreek seed. Alcohol, vitamins (B12, folic acid, retinol, D), caffeine and cholesterol were imputed zero."
+        )
+        db?.insert(FOOD_TABLE, null, food6)
+        val food7 = ContentValues()
+        food7.put(KEY_FOOD_NAME, "Curry powder")
+        food7.put(KEY_COMMON_NAME, "")
+        food7.put(
+            KEY_DESCRIPTION,
+            "Dried and ground mixture of spices for use in the preparation of Indian-style meals. Typical ingredients include the spices cumin, coriander seed and turmeric."
+        )
+        food7.put(KEY_NITROGEN_FACTOR, 6.25)
+        food7.put(KEY_FAT_FACTOR, 0.956)
+        food7.put(KEY_CALORIES_FACTOR, 40)
+        food7.put(KEY_SPECIFIC_GRAVITY, 0)
+        food7.put(KEY_ANALYSED_PORTION, 100)
+        food7.put(KEY_UNANALYSED_PORTION, 0)
+        food7.put(
+            KEY_SAMPLING_DETAILS,
+            "The majority of nutrient data were borrowed from USDA SR28, 02015 Spices, curry powder. Alcohol, vitamins (B12, folic acid, retinol, D), caffeine and cholesterol were imputed zero."
+        )
+        db?.insert(FOOD_TABLE, null, food7)
+
+        val food8 = ContentValues()
+        food8.put(KEY_FOOD_NAME, "Fenugreek seed, dried")
+        food8.put(KEY_COMMON_NAME, "Trigonella foenum-graecum")
+        food8.put(
+            KEY_DESCRIPTION,
+            "Dried fenugreek seeds used as a spice."
+        )
+        food8.put(KEY_NITROGEN_FACTOR, 6.25)
+        food8.put(KEY_FAT_FACTOR, 0.956)
+        food8.put(KEY_CALORIES_FACTOR, 40)
+        food8.put(KEY_SPECIFIC_GRAVITY, 0)
+        food8.put(KEY_ANALYSED_PORTION, 100)
+        food8.put(KEY_UNANALYSED_PORTION, 0)
+        food8.put(
+            KEY_SAMPLING_DETAILS,
+            "The majority of nutrient data were borrowed from USDA SR28, 02019 - Spices, fenugreek seed. Alpha-tocopherol, beta-carotene, proximates (starch, total sugars, fibre) and fatty acids were borrowed from Indian FCT G026 - Fenugreek seeds. Iodine was borrowed from NZ FOODfiles 2014, P37 - Seed, fenugreek. Alcohol, vitamins (B12, folic acid, retinol, D), caffeine and cholesterol were imputed zero. Note low sum of proximates - data should be used with caution."
+        )
+        db?.insert(FOOD_TABLE, null, food8)
+        val food9 = ContentValues()
+        food9.put(KEY_FOOD_NAME, "Ginger, dried, ground")
+        food9.put(KEY_COMMON_NAME, "Zingiber officinale")
+        food9.put(
+            KEY_DESCRIPTION,
+            "Dried and ground rhizome of Zingiber officinale, used as a spice."
+        )
+        food9.put(KEY_NITROGEN_FACTOR, 6.25)
+        food9.put(KEY_FAT_FACTOR, 0.956)
+        food9.put(KEY_CALORIES_FACTOR, 40)
+        food9.put(KEY_SPECIFIC_GRAVITY, 0)
+        food9.put(KEY_ANALYSED_PORTION, 100)
+        food9.put(KEY_UNANALYSED_PORTION, 0)
+        food9.put(
+            KEY_SAMPLING_DETAILS,
+            "The majority of nutrient data were borrowed from USDA SR28, 02021 Spices, ginger ground. Iodine was borrowed from NZ FOODfiles 2014, P4 - Spice, ginger, dried, ground. Alcohol, vitamins (B12, folic acid, retinol, D), caffeine and cholesterol were imputed zero."
+        )
+        db?.insert(FOOD_TABLE, null, food9)
+        val food10 = ContentValues()
+        food10.put(KEY_FOOD_NAME, "Nutmeg, dried, ground")
+        food10.put(KEY_COMMON_NAME, "")
+        food10.put(
+            KEY_DESCRIPTION,
+            "Dry powder composed of ground yellow mustard seeds, for use in preparation of mustard paste or incorporation into other foods."
+        )
+        food10.put(KEY_NITROGEN_FACTOR, 6.25)
+        food10.put(KEY_FAT_FACTOR, 0.956)
+        food10.put(KEY_CALORIES_FACTOR, 40)
+        food10.put(KEY_SPECIFIC_GRAVITY, 0)
+        food10.put(KEY_ANALYSED_PORTION, 100)
+        food10.put(KEY_UNANALYSED_PORTION, 0)
+        food10.put(
+            KEY_SAMPLING_DETAILS,
+            "The majority of nutrient data were derived from a composite sample of 6 purchases (4x Keens, 2x McCormick) of mustard powder purchased in Adelaide in 1990. Folate, C, B6, alpha-tocopherol and tryptophan were borrowed from the USDA SR28, 02024 - Spices, mustard seed, ground. Fibre is estimated based on products available in 2012. Alcohol, vitamins (retinol, folic acid, B12, D), iodine, caffeine and cholesterol were imputed zero."
+        )
+        db?.insert(FOOD_TABLE, null, food10)
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
@@ -245,6 +355,7 @@ class DatabaseHandler(val context: Context?) :
         val contentValues = ContentValues()
         contentValues.put(KEY_REG_EMAIL, email)
         contentValues.put(KEY_REG_PASSWORD, password)
+        contentValues.put(KEY_REG_OTP, "null")
         // Inserting Row
         val success = dbase.insert(REGISTRATION_TABLE, null, contentValues)
         //2nd argument is String containing nullColumnHack
@@ -364,6 +475,78 @@ class DatabaseHandler(val context: Context?) :
             } while (cursor.moveToNext())
         }
         return foodlist
+    }
+
+    //method to update data
+    fun updateForgot(
+        otp: Int,
+        email: String,
+    ): Int {
+        val db = this.writableDatabase
+
+        val contentValues = ContentValues()
+        contentValues.put(KEY_REG_PASSWORD, "")
+        contentValues.put(KEY_REG_OTP, otp)
+        val success =
+            db.update(
+                REGISTRATION_TABLE,
+                contentValues,
+                KEY_REG_EMAIL + " = '" + email + "'",
+                null
+            )
+        db.close()
+        return success
+    }
+
+    fun updatePassword(
+        userid: Int,
+        email: String,
+        password: String,
+    ): Int {
+        val db = this.writableDatabase
+
+        val contentValues = ContentValues()
+        contentValues.put(KEY_REG_EMAIL, email)
+        contentValues.put(KEY_REG_PASSWORD, password)
+        contentValues.put(KEY_REG_OTP, "")
+        val success =
+            db.update(
+                REGISTRATION_TABLE,
+                contentValues,
+                KEY_REG_ID + " = '" + userid + "'",
+                null
+            )
+        db.close()
+        return success
+    }
+
+    fun updateUserData(
+        userid: Int,
+        firstName: String,
+        weight: Double,
+        height: Double,
+        age: String,
+        gender: String,
+        activity: String
+    ): Int {
+        val db = this.writableDatabase
+
+        val contentValues = ContentValues()
+        contentValues.put(KEY_FIRST_NAME, firstName)
+        contentValues.put(KEY_WEIGHT, weight)
+        contentValues.put(KEY_HEIGHT, height)
+        contentValues.put(KEY_AGE, age)
+        contentValues.put(KEY_GENDER, gender)
+        contentValues.put(KEY_ACTIVITY, activity)
+        val success =
+            db.update(
+                PROFILE_TABLE,
+                contentValues,
+                KEY_PROFILE_REGID + " = '" + userid + "'",
+                null
+            )
+        db.close()
+        return success
     }
 
     //method to read data
@@ -709,6 +892,29 @@ class DatabaseHandler(val context: Context?) :
     fun login(email: String, password: String): Int {
         val selectQuery =
             "SELECT  * FROM $REGISTRATION_TABLE" + " Where " + KEY_REG_EMAIL + " = \'" + email + "\' AND " + KEY_REG_PASSWORD + " = " + password
+        val db = this.readableDatabase
+        var cursor: Cursor? = null
+        try {
+            cursor = db.rawQuery(selectQuery, null)
+        } catch (e: SQLiteException) {
+            db.execSQL(selectQuery)
+            return 0;
+        }
+        var userId: Int
+        if (cursor.moveToFirst()) {
+            do {
+                userId = cursor.getInt(cursor.getColumnIndex(KEY_REG_ID))
+                return userId;
+            } while (cursor.moveToNext())
+        }
+        return 0
+    }
+
+    //method to read data
+    @SuppressLint("Range")
+    fun otpmatch(email: String, otp: Int): Int {
+        val selectQuery =
+            "SELECT  * FROM $REGISTRATION_TABLE" + " Where " + KEY_REG_EMAIL + " = \'" + email + "\' AND " + KEY_REG_OTP + " = " + otp
         val db = this.readableDatabase
         var cursor: Cursor? = null
         try {

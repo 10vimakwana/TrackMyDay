@@ -224,33 +224,34 @@ class CalculateFragment : Fragment() {
                 val t_cal = totalcalories + cal
                 val totalsteps =
                     db.viewStepsCal(sessionManager.userId.toString().toInt(), formattedDate)
-                var stepcalories = 0;
+                var stepcalories = 500;
                 if (totalsteps == 0) {
                     stepcalories = 0
-                } else if (totalsteps < 1000) {
-                    stepcalories = 20
-                } else if (totalsteps > 1000) {
-                    stepcalories = 40
-                } else if (totalsteps > 2000) {
-                    stepcalories = 80
-                } else if (totalsteps > 3000) {
-                    stepcalories = 120
-                } else if (totalsteps > 4000) {
-                    stepcalories = 160
-                } else if (totalsteps > 5000) {
-                    stepcalories = 200
-                } else if (totalsteps > 6000) {
-                    stepcalories = 240
-                } else if (totalsteps > 7000) {
-                    stepcalories = 280
-                } else if (totalsteps > 8000) {
-                    stepcalories = 320
-                } else if (totalsteps > 9000) {
-                    stepcalories = 340
                 } else if (totalsteps > 10000) {
                     stepcalories = 380
-                } else {
-                    stepcalories = 500
+                    stepcalories = 20
+                } else if (totalsteps > 9000) {
+                    stepcalories = 340
+                } else if (totalsteps > 8000) {
+                    stepcalories = 320
+                } else if (totalsteps > 7000) {
+                    stepcalories = 280
+                } else if (totalsteps > 6000) {
+                    stepcalories = 240
+                } else if (totalsteps > 5000) {
+                    stepcalories = 200
+                } else if (totalsteps > 4000) {
+                    stepcalories = 160
+                } else if (totalsteps > 3000) {
+                    stepcalories = 120
+                } else if (totalsteps > 2000) {
+                    stepcalories = 80
+                } else if (totalsteps > 1000) {
+                    stepcalories = 40
+                } else if (totalsteps < 1000) {
+                    stepcalories = 20
+                } else if (totalsteps == 0){
+                    stepcalories = 0
                 }
                 txt_step_calories.text =""+ stepcalories
                 val gradtotal = t_cal - stepcalories
@@ -293,33 +294,34 @@ class CalculateFragment : Fragment() {
 
                 val totalsteps =
                     db.viewStepsCal(sessionManager.userId.toString().toInt(), formattedDate)
-                var stepcalories = 0;
+                var stepcalories = 500;
                 if (totalsteps == 0) {
                     stepcalories = 0
-                } else if (totalsteps < 1000) {
-                    stepcalories = 20
-                } else if (totalsteps > 1000) {
-                    stepcalories = 40
-                } else if (totalsteps > 2000) {
-                    stepcalories = 80
-                } else if (totalsteps > 3000) {
-                    stepcalories = 120
-                } else if (totalsteps > 4000) {
-                    stepcalories = 160
-                } else if (totalsteps > 5000) {
-                    stepcalories = 200
-                } else if (totalsteps > 6000) {
-                    stepcalories = 240
-                } else if (totalsteps > 7000) {
-                    stepcalories = 280
-                } else if (totalsteps > 8000) {
-                    stepcalories = 320
-                } else if (totalsteps > 9000) {
-                    stepcalories = 340
                 } else if (totalsteps > 10000) {
                     stepcalories = 380
-                } else {
-                    stepcalories = 500
+                    stepcalories = 20
+                } else if (totalsteps > 9000) {
+                    stepcalories = 340
+                } else if (totalsteps > 8000) {
+                    stepcalories = 320
+                } else if (totalsteps > 7000) {
+                    stepcalories = 280
+                } else if (totalsteps > 6000) {
+                    stepcalories = 240
+                } else if (totalsteps > 5000) {
+                    stepcalories = 200
+                } else if (totalsteps > 4000) {
+                    stepcalories = 160
+                } else if (totalsteps > 3000) {
+                    stepcalories = 120
+                } else if (totalsteps > 2000) {
+                    stepcalories = 80
+                } else if (totalsteps > 1000) {
+                    stepcalories = 40
+                } else if (totalsteps < 1000) {
+                    stepcalories = 20
+                } else if (totalsteps == 0){
+                    stepcalories = 0
                 }
                 txt_step_calories.text =""+ stepcalories
 

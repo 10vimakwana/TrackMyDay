@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/commonbg"
+    tools:context=".activity.ResetActivity">
+
+    <com.project.trackmydayapp.fonthelper.FontEditText
+        android:id="@+id/ed_reset_pass"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/bg"
+        android:drawableLeft="@drawable/ic_password"
+        android:drawablePadding="15dp"
+        android:ellipsize="end"
+        android:hint="Enter Password"
+        android:inputType="textPassword"
+        android:paddingLeft="16dp"
+        android:singleLine="true"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/ed_reset_repass"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/bg"
+        android:drawableLeft="@drawable/ic_password"
+        android:drawablePadding="15dp"
+        android:ellipsize="end"
+        android:hint="Enter Re-Password"
+        android:inputType="textPassword"
+        android:paddingLeft="16dp"
+        android:singleLine="true"
+        android:textSize="14sp" />
+
+    <com.project.trackmydayapp.fonthelper.RobotoTextViewBold
+        android:id="@+id/btn_reset"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/btn_bg"
+        android:gravity="center"
+        android:letterSpacing="0.05"
+        android:text="Sign up"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+</LinearLayout>

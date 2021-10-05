@@ -18,6 +18,7 @@ import com.project.trackmydayapp.helper.SessionManager
 class LoginActivity : AppCompatActivity() {
 
     lateinit var txt_already_reg: TextView;
+    lateinit var txt_forgot: TextView;
     lateinit var ed_login_email: EditText;
     lateinit var ed_login_pass: EditText;
     lateinit var btn_login: TextView;
@@ -66,6 +67,11 @@ class LoginActivity : AppCompatActivity() {
             }
         })
 
+
+        txt_forgot.setOnClickListener(View.OnClickListener {
+            intent = Intent(this, ForgotActivity::class.java)
+            startActivity(intent)
+        })
         txt_already_reg.setOnClickListener(View.OnClickListener {
             intent = Intent(this, RegistrationActivity::class.java)
             startActivity(intent)
@@ -74,6 +80,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun initUI() {
         txt_already_reg = findViewById(R.id.txt_already_reg);
+        txt_forgot = findViewById(R.id.txt_forgot);
         btn_login = findViewById(R.id.btn_login);
         ed_login_email = findViewById(R.id.ed_login_email);
         ed_login_pass = findViewById(R.id.ed_login_pass);

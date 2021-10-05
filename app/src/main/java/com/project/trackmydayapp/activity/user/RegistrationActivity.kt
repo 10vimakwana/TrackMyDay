@@ -41,6 +41,8 @@ class RegistrationActivity : AppCompatActivity() {
                 ed_reg_pass.setError("Enter Password")
             } else if (ed_reg_repass.text.isEmpty()) {
                 ed_reg_repass.setError("Enter Re-Password")
+            } else if (ed_reg_pass.text.length<=6) {
+                ed_reg_pass.setError("Enter atleast 6 length Password")
             } else if (!ed_reg_pass.text.toString().equals(ed_reg_repass.text.toString())) {
                 Toast.makeText(this, "Password not match", Toast.LENGTH_SHORT).show()
             } else if (!checkEmail(ed_reg_email.text.toString())) {

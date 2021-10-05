@@ -38,7 +38,6 @@
                 android:id="@+id/ed_login_email"
                 android:background="@drawable/bg"
                 android:hint="Enter Email"
-                android:text="admin@gmail.com"
                 android:drawablePadding="15dp"
                 android:drawableLeft="@drawable/ic_email"
                 android:singleLine="true"
@@ -49,7 +48,6 @@
             <com.project.trackmydayapp.fonthelper.FontEditText
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:text="123456"
                 android:id="@+id/ed_login_pass"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="16dp"
@@ -87,6 +85,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="16dp"
                 android:gravity="right"
+                android:id="@+id/txt_forgot"
                 android:text="Forgot Password?"
                 android:textColor="@color/black"
                 android:textSize="14sp" />

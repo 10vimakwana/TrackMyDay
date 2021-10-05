@@ -15,6 +15,11 @@
         android:name="com.project.trackmydayapp.activity.admin.fragment.FoodFragment"
         android:label="Food"
         tools:layout="@layout/fragment_food" />
+    <fragment
+        android:id="@+id/nav_aboutus"
+        android:name="com.project.trackmydayapp.activity.user.fragment.AboutUsFragment"
+        android:label="About us"
+        tools:layout="@layout/fragment_about_us" />
 
 
     <fragment

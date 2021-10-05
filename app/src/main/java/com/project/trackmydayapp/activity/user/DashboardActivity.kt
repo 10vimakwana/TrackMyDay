@@ -46,6 +46,7 @@ class DashboardActivity : AppCompatActivity() {
             val a = Intent(this, LoginActivity::class.java)
             a.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(a)
+            finish()
             true
         }
         val navController = findNavController(R.id.nav_host_fragment_content_dashboard)
@@ -57,7 +58,7 @@ class DashboardActivity : AppCompatActivity() {
                     R.id.nav_dashboard,
                     R.id.nav_home,
                     R.id.nav_chart,
-                    R.id.nav_all_user,
+                    R.id.nav_user,
                     R.id.nav_feedbackreply,
                     R.id.nav_slideshow,
                     R.id.nav_feedback

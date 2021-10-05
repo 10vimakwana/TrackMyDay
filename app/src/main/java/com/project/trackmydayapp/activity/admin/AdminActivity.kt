@@ -49,6 +49,7 @@ class AdminActivity : AppCompatActivity() {
             val a = Intent(this, LoginActivity::class.java)
             a.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(a)
+            finish()
             true
         }
         val navController = findNavController(R.id.nav_host_fragment_content_admin)

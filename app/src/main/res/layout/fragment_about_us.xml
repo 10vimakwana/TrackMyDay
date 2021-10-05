@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/commonbg"
+    tools:context=".activity.user.fragment.AboutUsFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <com.project.trackmydayapp.fonthelper.RobotoTextViewBold
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:text="TrackMyDay application vision is  \nDon\'t eat less\nEat Smart"
+        android:letterSpacing="0.05"
+        android:lineSpacingExtra="8dp"/>
+
+</FrameLayout>

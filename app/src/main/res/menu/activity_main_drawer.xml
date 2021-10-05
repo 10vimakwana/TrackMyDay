@@ -17,7 +17,7 @@
             android:icon="@drawable/ic_menu_person"
             android:title="All User" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_aboutus"
             android:icon="@drawable/ic_menu_info"
             android:title="About us"
              />
