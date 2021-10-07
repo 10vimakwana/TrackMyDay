@@ -41,7 +41,7 @@ class RegistrationActivity : AppCompatActivity() {
                 ed_reg_pass.setError("Enter Password")
             } else if (ed_reg_repass.text.isEmpty()) {
                 ed_reg_repass.setError("Enter Re-Password")
-            } else if (ed_reg_pass.text.length<=6) {
+            } else if (ed_reg_pass.text.length < 6) {
                 ed_reg_pass.setError("Enter atleast 6 length Password")
             } else if (!ed_reg_pass.text.toString().equals(ed_reg_repass.text.toString())) {
                 Toast.makeText(this, "Password not match", Toast.LENGTH_SHORT).show()
@@ -52,10 +52,11 @@ class RegistrationActivity : AppCompatActivity() {
                 val db: DatabaseHandler = DatabaseHandler(this);
                 val status = db.addUser(ed_reg_email.text.toString(), ed_reg_pass.text.toString());
                 if (status > -1) {
-                    val userid = db.login(ed_reg_email.text.toString(), ed_reg_pass.text.toString());
+                    val userid =
+                        db.login(ed_reg_email.text.toString(), ed_reg_pass.text.toString());
                     Toast.makeText(this, "Sign up Successfully", Toast.LENGTH_SHORT).show()
                     intent = Intent(this, ProfileUserActivity::class.java)
-                    intent.putExtra("userId",userid)
+                    intent.putExtra("userId", userid)
                     startActivity(intent)
                     finish()
                 } else {
