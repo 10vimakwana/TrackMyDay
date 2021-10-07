@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.project.trackmydayapp.R
 import com.project.trackmydayapp.adapter.RecipeListAdapter
+import com.project.trackmydayapp.adapter.UserAllFeedbackAdapter
 import com.project.trackmydayapp.database.DatabaseHandler
 import com.project.trackmydayapp.databinding.FragmentAddRecipeBinding
 import com.project.trackmydayapp.databinding.FragmentAdmiFeedbackBinding
@@ -20,8 +21,7 @@ import com.project.trackmydayapp.model.FeedbackModel
 class AdminFeedbackFragment : Fragment() {
 
 
-    private lateinit var txt_adminfeedback_que: TextView
-    private lateinit var txt_adminfeedback_ans: TextView
+    private lateinit var ry_admin_feedback: RecyclerView
     private var _binding: FragmentAdmiFeedbackBinding? = null
 
     // This property is only valid between onCreateView and
@@ -40,20 +40,23 @@ class AdminFeedbackFragment : Fragment() {
         val db: DatabaseHandler = DatabaseHandler(activity?.applicationContext);
 
 
-        txt_adminfeedback_que = root.findViewById(R.id.txt_adminfeedback_que);
-        txt_adminfeedback_ans = root.findViewById(R.id.txt_adminfeedback_ans);
+        ry_admin_feedback = root.findViewById(R.id.ry_admin_feedback);
+        ry_admin_feedback.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
 
-        val arraylist: ArrayList<FeedbackModel> =db.viewFeedback(sessionManager.userId.toString().toInt());
+        val arraylist: ArrayList<FeedbackModel> =
+            db.viewFeedback(sessionManager.userId.toString().toInt());
+        val obj_adapter = UserAllFeedbackAdapter(activity?.baseContext, arraylist);
+        ry_admin_feedback.adapter = obj_adapter
 
-        if (arraylist.size>0) {
-
-
-            txt_adminfeedback_que.text = "Question :  " + arraylist.get(0).title
-            txt_adminfeedback_ans.text = "Ans : " + arraylist.get(0).reply
-        }else{
-            txt_adminfeedback_que.text = " No Question "
-
-        }
+//        if (arraylist.size>0) {
+//
+//
+//            txt_adminfeedback_que.text = "Question :  " + arraylist.get(0).title
+//            txt_adminfeedback_ans.text = "Ans : " + arraylist.get(0).reply
+//        }else{
+//            txt_adminfeedback_que.text = " No Question "
+//
+//        }
 
         return root
     }

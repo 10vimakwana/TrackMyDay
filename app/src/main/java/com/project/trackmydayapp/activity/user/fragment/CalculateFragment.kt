@@ -33,9 +33,6 @@ import kotlin.collections.ArrayList
 import android.text.format.DateUtils
 
 
-
-
-
 class CalculateFragment : Fragment() {
 
 
@@ -91,7 +88,8 @@ class CalculateFragment : Fragment() {
                 requireActivity(),
                 DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
                     // Display Selected date in textbox
-                    val date = SimpleDateFormat("dd/MM/yyyy").parse( ""+dayOfMonth + "/" + (monthOfYear + 1) + "/" + year)
+                    val date =
+                        SimpleDateFormat("dd/MM/yyyy").parse("" + dayOfMonth + "/" + (monthOfYear + 1) + "/" + year)
                     ed_date.setText(df.format(date.time))
                 },
                 year,
@@ -147,7 +145,7 @@ class CalculateFragment : Fragment() {
 
             val recipelist = db.viewRecipe(sessionManager.userId!!.toInt(), beforedate)
             for (item in recipelist) {
-                println("geting " +item)
+                println("geting " + item)
                 val status = db.addRecipe(
                     sessionManager.userId.toString().toInt(),
                     item.foodId,
@@ -192,44 +190,46 @@ class CalculateFragment : Fragment() {
                 var cal = 0.0
                 if (profilelist.get(0).activity.equals("one")) {
                     cal =
-                        ((66 + (6.2 * profilelist.get(0).weight) + (12.7 * profilelist.get(0).height) - (6.76 * profilelist.get(
+                        (66 + (((6.2 * profilelist.get(0).weight) + (12.7 * profilelist.get(0).height) - (6.76 * profilelist.get(
                             0
-                        ).age)) * 1.2)
+                        ).age))) * 1.2)
                 } else if (profilelist.get(0).activity.equals("two")) {
                     cal =
-                        ((66 + (6.2 * profilelist.get(0).weight) + (12.7 * profilelist.get(0).height) - (6.76 * profilelist.get(
+                        (66 + (((6.2 * profilelist.get(0).weight) + (12.7 * profilelist.get(0).height) - (6.76 * profilelist.get(
                             0
-                        ).age)) * 1.37)
+                        ).age))) * 1.37)
                 } else if (profilelist.get(0).activity.equals("three")) {
                     cal =
-                        ((66 + (6.2 * profilelist.get(0).weight) + (12.7 * profilelist.get(0).height) - (6.76 * profilelist.get(
+                        (66 + (((6.2 * profilelist.get(0).weight) + (12.7 * profilelist.get(0).height) - (6.76 * profilelist.get(
                             0
-                        ).age)) * 1.55)
+                        ).age))) * 1.55)
                 } else if (profilelist.get(0).activity.equals("four")) {
                     cal =
-                        ((66 + (6.2 * profilelist.get(0).weight) + (12.7 * profilelist.get(0).height) - (6.76 * profilelist.get(
+                        (66 + (((6.2 * profilelist.get(0).weight) + (12.7 * profilelist.get(0).height) - (6.76 * profilelist.get(
                             0
-                        ).age)) * 1.725)
+                        ).age))) * 1.725)
                 }
                 val c = Calendar.getInstance()
                 val df = SimpleDateFormat("dd/MM/yyyy")
                 val formattedDate = df.format(c.time)
 
-                val cal2place:Double = String.format("%.2f", cal).toDouble()
+                val cal2place: Double = String.format("%.2f", cal).toDouble()
 
-                txt_target_calories.text = ""+cal2place
+                txt_target_calories.text = "" + cal2place
                 val totalcalories =
                     db.viewRecipeCal(sessionManager.userId.toString().toInt(), formattedDate)
-                txt_receipe_calories.text = ""+totalcalories
+                txt_receipe_calories.text = "" + totalcalories
                 val t_cal = totalcalories + cal
+
                 val totalsteps =
                     db.viewStepsCal(sessionManager.userId.toString().toInt(), formattedDate)
                 var stepcalories = 500;
                 if (totalsteps == 0) {
                     stepcalories = 0
+                } else if (totalsteps > 15000) {
+                    stepcalories = 450
                 } else if (totalsteps > 10000) {
                     stepcalories = 380
-                    stepcalories = 20
                 } else if (totalsteps > 9000) {
                     stepcalories = 340
                 } else if (totalsteps > 8000) {
@@ -250,46 +250,46 @@ class CalculateFragment : Fragment() {
                     stepcalories = 40
                 } else if (totalsteps < 1000) {
                     stepcalories = 20
-                } else if (totalsteps == 0){
+                } else if (totalsteps == 0) {
                     stepcalories = 0
                 }
-                txt_step_calories.text =""+ stepcalories
-                val gradtotal = t_cal - stepcalories
-                val total2place:Double = String.format("%.2f", gradtotal).toDouble()
-                txt_calories.text = "" + total2place
+                txt_step_calories.text = "" + stepcalories
+
+                val gradtotal = totalcalories - stepcalories
+                txt_calories.text = "" + gradtotal
             } else {
                 var cal = 0.0
                 if (profilelist.get(0).activity.equals("one")) {
                     cal =
-                        ((655.1 + (6.2 * profilelist.get(0).weight) + (12.7 * profilelist.get(0).height) - (6.76 * profilelist.get(
+                        (655.1 + (((6.2 * profilelist.get(0).weight) + (12.7 * profilelist.get(0).height) - (6.76 * profilelist.get(
                             0
-                        ).age)) * 1.2)
+                        ).age))) * 1.2)
                 } else if (profilelist.get(0).activity.equals("two")) {
                     cal =
-                        ((655.1 + (6.2 * profilelist.get(0).weight) + (12.7 * profilelist.get(0).height) - (6.76 * profilelist.get(
+                        (655.1 + (((6.2 * profilelist.get(0).weight) + (12.7 * profilelist.get(0).height) - (6.76 * profilelist.get(
                             0
-                        ).age)) * 1.37)
+                        ).age))) * 1.37)
                 } else if (profilelist.get(0).activity.equals("three")) {
                     cal =
-                        ((655.1 + (6.2 * profilelist.get(0).weight) + (12.7 * profilelist.get(0).height) - (6.76 * profilelist.get(
+                        (655.1 + (((6.2 * profilelist.get(0).weight) + (12.7 * profilelist.get(0).height) - (6.76 * profilelist.get(
                             0
-                        ).age)) * 1.55)
+                        ).age))) * 1.55)
                 } else if (profilelist.get(0).activity.equals("four")) {
                     cal =
-                        ((655.1 + (6.2 * profilelist.get(0).weight) + (12.7 * profilelist.get(0).height) - (6.76 * profilelist.get(
+                        (655.1 + (((6.2 * profilelist.get(0).weight) + (12.7 * profilelist.get(0).height) - (6.76 * profilelist.get(
                             0
-                        ).age)) * 1.725)
+                        ).age))) * 1.725)
                 }
                 val c = Calendar.getInstance()
                 val df = SimpleDateFormat("dd/MM/yyyy")
                 val formattedDate = df.format(c.time)
-                val cal2place:Double = String.format("%.2f", cal).toDouble()
+                val cal2place: Double = String.format("%.2f", cal).toDouble()
 
-                txt_target_calories.text = ""+cal2place
+                txt_target_calories.text = "" + cal2place
 
                 val totalcalories =
                     db.viewRecipeCal(sessionManager.userId.toString().toInt(), formattedDate)
-                txt_receipe_calories.text = ""+totalcalories
+                txt_receipe_calories.text = "" + totalcalories
                 val t_cal = totalcalories + cal
 
                 val totalsteps =
@@ -297,9 +297,10 @@ class CalculateFragment : Fragment() {
                 var stepcalories = 500;
                 if (totalsteps == 0) {
                     stepcalories = 0
+                } else if (totalsteps > 15000) {
+                    stepcalories = 450
                 } else if (totalsteps > 10000) {
                     stepcalories = 380
-                    stepcalories = 20
                 } else if (totalsteps > 9000) {
                     stepcalories = 340
                 } else if (totalsteps > 8000) {
@@ -320,14 +321,13 @@ class CalculateFragment : Fragment() {
                     stepcalories = 40
                 } else if (totalsteps < 1000) {
                     stepcalories = 20
-                } else if (totalsteps == 0){
+                } else if (totalsteps == 0) {
                     stepcalories = 0
                 }
-                txt_step_calories.text =""+ stepcalories
+                txt_step_calories.text = "" + stepcalories
 
-                val gradtotal = t_cal - stepcalories
-                val total2place:Double = String.format("%.2f", gradtotal).toDouble()
-                txt_calories.text = "" + total2place
+                val gradtotal = totalcalories - stepcalories
+                txt_calories.text = "" + gradtotal
             }
         }
 

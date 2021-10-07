@@ -14,8 +14,10 @@
         android:gravity="center"
         android:textSize="18sp"
         android:textColor="@color/black"
-        android:text="TrackMyDay application vision is  \nDon\'t eat less\nEat Smart"
+        android:text="Our vision is “Don’t eat less, eat smart”. TrackMyDay is a fitness tracking app that allows you to keep track of your meals and activity throughout the day.This application allows user to search through a massive collection of meals which extremely use nutrients to help them achieve their fitness goals, even if they are counting calories or want to just eat better meals. The users of a meal and activity monitoring application may keep track of their foods throughout the day, as well as their calorie consumption and the number of walking/running steps or other physical activities they undertook to burn calories. This application allows user to send query to admin and get the solution."
         android:letterSpacing="0.05"
-        android:lineSpacingExtra="8dp"/>
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:lineSpacingExtra="5dp"/>
 
 </FrameLayout>

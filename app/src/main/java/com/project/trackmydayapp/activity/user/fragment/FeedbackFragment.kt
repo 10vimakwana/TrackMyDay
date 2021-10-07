@@ -47,11 +47,11 @@ class FeedbackFragment : Fragment() {
             )
         }!!
 
-        if (db.isFeedbackSend(sessionManager.userId.toString().toInt())==1){
-            btn_feedback.isEnabled = false
-        }else{
-            btn_feedback.isEnabled = true
-        }
+//       if (db.isFeedbackSend(sessionManager.userId.toString().toInt())==1){
+//            btn_feedback.isEnabled = false
+//        }else{
+//            btn_feedback.isEnabled = true
+//        }
 
         btn_feedback.setOnClickListener {
             if (ed_fedback_title.text.isEmpty()) {
@@ -68,6 +68,9 @@ class FeedbackFragment : Fragment() {
                         1
                     );
                 if (isAdded > 0) {
+                    ed_feedback.setText("")
+                    ed_fedback_title.setText("");
+
                     Toast.makeText(activity, "Feedback Save Successfully", Toast.LENGTH_SHORT)
                         .show()
                 } else {

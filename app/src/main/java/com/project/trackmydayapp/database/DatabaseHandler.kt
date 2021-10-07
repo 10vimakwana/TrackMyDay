@@ -105,7 +105,7 @@ class DatabaseHandler(val context: Context?) :
         )
         food1.put(KEY_NITROGEN_FACTOR, 6.25)
         food1.put(KEY_FAT_FACTOR, 0.956)
-        food1.put(KEY_CALORIES_FACTOR, 50)
+        food1.put(KEY_CALORIES_FACTOR, 90)
         food1.put(KEY_SPECIFIC_GRAVITY, 0)
         food1.put(KEY_ANALYSED_PORTION, 100)
         food1.put(KEY_UNANALYSED_PORTION, 0)
@@ -123,7 +123,7 @@ class DatabaseHandler(val context: Context?) :
         )
         food2.put(KEY_NITROGEN_FACTOR, 6.25)
         food2.put(KEY_FAT_FACTOR, 0.8)
-        food2.put(KEY_CALORIES_FACTOR, 30)
+        food2.put(KEY_CALORIES_FACTOR, 80)
         food2.put(KEY_SPECIFIC_GRAVITY, 0)
         food2.put(KEY_ANALYSED_PORTION, 100)
         food2.put(KEY_UNANALYSED_PORTION, 0)
@@ -141,7 +141,7 @@ class DatabaseHandler(val context: Context?) :
         )
         food3.put(KEY_NITROGEN_FACTOR, 6.25)
         food3.put(KEY_FAT_FACTOR, 0.956)
-        food3.put(KEY_CALORIES_FACTOR, 40)
+        food3.put(KEY_CALORIES_FACTOR, 80)
         food3.put(KEY_SPECIFIC_GRAVITY, 0)
         food3.put(KEY_ANALYSED_PORTION, 100)
         food3.put(KEY_UNANALYSED_PORTION, 0)
@@ -159,7 +159,7 @@ class DatabaseHandler(val context: Context?) :
         )
         food4.put(KEY_NITROGEN_FACTOR, 6.25)
         food4.put(KEY_FAT_FACTOR, 0.956)
-        food4.put(KEY_CALORIES_FACTOR, 40)
+        food4.put(KEY_CALORIES_FACTOR, 80)
         food4.put(KEY_SPECIFIC_GRAVITY, 0)
         food4.put(KEY_ANALYSED_PORTION, 100)
         food4.put(KEY_UNANALYSED_PORTION, 0)
@@ -177,7 +177,7 @@ class DatabaseHandler(val context: Context?) :
         )
         food5.put(KEY_NITROGEN_FACTOR, 6.25)
         food5.put(KEY_FAT_FACTOR, 0.956)
-        food5.put(KEY_CALORIES_FACTOR, 40)
+        food5.put(KEY_CALORIES_FACTOR, 80)
         food5.put(KEY_SPECIFIC_GRAVITY, 0)
         food5.put(KEY_ANALYSED_PORTION, 100)
         food5.put(KEY_UNANALYSED_PORTION, 0)
@@ -195,7 +195,7 @@ class DatabaseHandler(val context: Context?) :
         )
         food6.put(KEY_NITROGEN_FACTOR, 6.25)
         food6.put(KEY_FAT_FACTOR, 0.956)
-        food6.put(KEY_CALORIES_FACTOR, 40)
+        food6.put(KEY_CALORIES_FACTOR, 95)
         food6.put(KEY_SPECIFIC_GRAVITY, 0)
         food6.put(KEY_ANALYSED_PORTION, 100)
         food6.put(KEY_UNANALYSED_PORTION, 0)
@@ -213,7 +213,7 @@ class DatabaseHandler(val context: Context?) :
         )
         food7.put(KEY_NITROGEN_FACTOR, 6.25)
         food7.put(KEY_FAT_FACTOR, 0.956)
-        food7.put(KEY_CALORIES_FACTOR, 40)
+        food7.put(KEY_CALORIES_FACTOR, 95)
         food7.put(KEY_SPECIFIC_GRAVITY, 0)
         food7.put(KEY_ANALYSED_PORTION, 100)
         food7.put(KEY_UNANALYSED_PORTION, 0)
@@ -232,7 +232,7 @@ class DatabaseHandler(val context: Context?) :
         )
         food8.put(KEY_NITROGEN_FACTOR, 6.25)
         food8.put(KEY_FAT_FACTOR, 0.956)
-        food8.put(KEY_CALORIES_FACTOR, 40)
+        food8.put(KEY_CALORIES_FACTOR, 100)
         food8.put(KEY_SPECIFIC_GRAVITY, 0)
         food8.put(KEY_ANALYSED_PORTION, 100)
         food8.put(KEY_UNANALYSED_PORTION, 0)
@@ -250,7 +250,7 @@ class DatabaseHandler(val context: Context?) :
         )
         food9.put(KEY_NITROGEN_FACTOR, 6.25)
         food9.put(KEY_FAT_FACTOR, 0.956)
-        food9.put(KEY_CALORIES_FACTOR, 40)
+        food9.put(KEY_CALORIES_FACTOR, 100)
         food9.put(KEY_SPECIFIC_GRAVITY, 0)
         food9.put(KEY_ANALYSED_PORTION, 100)
         food9.put(KEY_UNANALYSED_PORTION, 0)
@@ -268,7 +268,7 @@ class DatabaseHandler(val context: Context?) :
         )
         food10.put(KEY_NITROGEN_FACTOR, 6.25)
         food10.put(KEY_FAT_FACTOR, 0.956)
-        food10.put(KEY_CALORIES_FACTOR, 40)
+        food10.put(KEY_CALORIES_FACTOR, 100)
         food10.put(KEY_SPECIFIC_GRAVITY, 0)
         food10.put(KEY_ANALYSED_PORTION, 100)
         food10.put(KEY_UNANALYSED_PORTION, 0)
@@ -277,6 +277,276 @@ class DatabaseHandler(val context: Context?) :
             "The majority of nutrient data were derived from a composite sample of 6 purchases (4x Keens, 2x McCormick) of mustard powder purchased in Adelaide in 1990. Folate, C, B6, alpha-tocopherol and tryptophan were borrowed from the USDA SR28, 02024 - Spices, mustard seed, ground. Fibre is estimated based on products available in 2012. Alcohol, vitamins (retinol, folic acid, B12, D), iodine, caffeine and cholesterol were imputed zero."
         )
         db?.insert(FOOD_TABLE, null, food10)
+        val food11 = ContentValues()
+        food11.put(KEY_FOOD_NAME, "Coffee, instant, dry powder or granules")
+        food11.put(KEY_COMMON_NAME, "")
+        food11.put(
+            KEY_DESCRIPTION,
+            "Dried extract of coffee beans, used to produce a beverage by the addition of boiling water."
+        )
+        food11.put(KEY_NITROGEN_FACTOR, 5.3)
+        food11.put(KEY_FAT_FACTOR, 0.8)
+        food11.put(KEY_CALORIES_FACTOR, 50)
+        food11.put(KEY_SPECIFIC_GRAVITY, 0)
+        food11.put(KEY_ANALYSED_PORTION, 100)
+        food11.put(KEY_UNANALYSED_PORTION, 0)
+        food11.put(
+            KEY_SAMPLING_DETAILS,
+            "The majority of nutrient data were derived from a composite sample of 6 purchases (4x Keens, 2x McCormick) of mustard powder purchased in Adelaide in 1990. Folate, C, B6, alpha-tocopherol and tryptophan were borrowed from the USDA SR28, 02024 - Spices, mustard seed, ground. Fibre is estimated based on products available in 2012. Alcohol, vitamins (retinol, folic acid, B12, D), iodine, caffeine and cholesterol were imputed zero."
+        )
+        db?.insert(FOOD_TABLE, null, food11)
+        val food12 = ContentValues()
+        food12.put(KEY_FOOD_NAME, "Fruit drink, apple juice")
+        food12.put(KEY_COMMON_NAME, "")
+        food12.put(
+            KEY_DESCRIPTION,
+            "Commercially prepared product made from 25% apple juice or puree, water, sugars and food acids. Does not contain added vitamin C."
+        )
+        food12.put(KEY_NITROGEN_FACTOR, 6.25)
+        food12.put(KEY_FAT_FACTOR, 0.8)
+        food12.put(KEY_CALORIES_FACTOR, 40)
+        food12.put(KEY_SPECIFIC_GRAVITY, 1.04)
+        food12.put(KEY_ANALYSED_PORTION, 100)
+        food12.put(KEY_UNANALYSED_PORTION, 0)
+        food12.put(
+            KEY_SAMPLING_DETAILS,
+            "The majority of nutrient data were derived from a composite of 6 samples of 25% apple juice drinks (Bi-Lo, Home Brand, Glo, No Frills, Fruit Box and Berri) purchased in Adelaide in 1990. Vitamins (B1, B2, B3, folate) and iodine were calculated from apple juice. Proximates (fibre, starch), B6, alpha-tocopherol and fatty acids were imputed from apple juice. Alcohol, vitamins (folic acid, B12, D) caffeine and cholesterol were imputed zero."
+        )
+        db?.insert(FOOD_TABLE, null, food12)
+        val food13 = ContentValues()
+        food13.put(KEY_FOOD_NAME, "Fruit drink, apple juice")
+        food13.put(KEY_COMMON_NAME, "")
+        food13.put(
+            KEY_DESCRIPTION,
+            "Commercially prepared product made from 25% apple juice or puree, water, sugars and food acids. Does not contain added vitamin C."
+        )
+        food13.put(KEY_NITROGEN_FACTOR, 6.25)
+        food13.put(KEY_FAT_FACTOR, 0.8)
+        food13.put(KEY_CALORIES_FACTOR, 40)
+        food13.put(KEY_SPECIFIC_GRAVITY, 1.04)
+        food13.put(KEY_ANALYSED_PORTION, 100)
+        food13.put(KEY_UNANALYSED_PORTION, 0)
+        food13.put(
+            KEY_SAMPLING_DETAILS,
+            "The majority of nutrient data were derived from a composite of 6 samples of 25% apple juice drinks (Bi-Lo, Home Brand, Glo, No Frills, Fruit Box and Berri) purchased in Adelaide in 1990. Vitamins (B1, B2, B3, folate) and iodine were calculated from apple juice. Proximates (fibre, starch), B6, alpha-tocopherol and fatty acids were imputed from apple juice. Alcohol, vitamins (folic acid, B12, D) caffeine and cholesterol were imputed zero."
+        )
+        db?.insert(FOOD_TABLE, null, food13)
+        val food14 = ContentValues()
+        food14.put(KEY_FOOD_NAME, "Juice, lemon")
+        food14.put(KEY_COMMON_NAME, "")
+        food14.put(
+            KEY_DESCRIPTION,
+            "Commercial or homemade liquid prepared from the endocarp of lemons."
+        )
+        food14.put(KEY_NITROGEN_FACTOR, 0)
+        food14.put(KEY_FAT_FACTOR, 0)
+        food14.put(KEY_CALORIES_FACTOR, 20)
+        food14.put(KEY_SPECIFIC_GRAVITY, 1.05)
+        food14.put(KEY_ANALYSED_PORTION, 100)
+        food14.put(KEY_UNANALYSED_PORTION, 0)
+        food14.put(
+            KEY_SAMPLING_DETAILS,
+            "These nutrient data were derived using a recipe approach. For further information refer to individual ingredients."
+        )
+        db?.insert(FOOD_TABLE, null, food14)
+        val food15 = ContentValues()
+        food15.put(KEY_FOOD_NAME, "Tea, green, plain, without milk")
+        food15.put(KEY_COMMON_NAME, "")
+        food15.put(
+            KEY_DESCRIPTION,
+            "Beverage prepared by brewing green, unfermented tea leaves in hot water, either as loose tea leaves or encased in porous teabags. Tea is not decaffeinated or flavoured. Does not contain added milk or sugar."
+        )
+        food15.put(KEY_NITROGEN_FACTOR, 6.25)
+        food15.put(KEY_FAT_FACTOR, 0.8)
+        food15.put(KEY_CALORIES_FACTOR, 40)
+        food15.put(KEY_SPECIFIC_GRAVITY, 1.05)
+        food15.put(KEY_ANALYSED_PORTION, 100)
+        food15.put(KEY_UNANALYSED_PORTION, 0)
+        food15.put(
+            KEY_SAMPLING_DETAILS,
+            "Minerals and folate were derived from a composite sample of 7 brands of green tea (2x Twinings, 1x Lipton, 1x Tetley, 1x Madura, 1x Woolworths Select, 1x Dilmah and 1x Nerada) purchased in WA, SA, VIC, QLD and ACT in 2014. Caffeine was derived from individual analysis of the same samples. Proximates (protein, sugar, ash) and the majority of vitamins were borrowed from USDA SR 28, 14278 - Beverages, tea, green, brewed, regular. Proximates (fibre, starch, alcohol), fatty acids, cholesterol and vitamins (retinol, folic acid, B12, C, D) were imputed zero. Note low sum of proximates - data should be used with caution."
+        )
+        db?.insert(FOOD_TABLE, null, food15)
+        val food16 = ContentValues()
+        food16.put(KEY_FOOD_NAME, "Biscuit, savoury, rice cracker, plain")
+        food16.put(KEY_COMMON_NAME, "")
+        food16.put(
+            KEY_DESCRIPTION,
+            "Commercially prepared savoury biscuit made predominantly from rice flour, without added flavourings."
+        )
+        food16.put(KEY_NITROGEN_FACTOR, 5.95)
+        food16.put(KEY_FAT_FACTOR, 0.95)
+        food16.put(KEY_CALORIES_FACTOR, 40)
+        food16.put(KEY_SPECIFIC_GRAVITY, 0)
+        food16.put(KEY_ANALYSED_PORTION, 100)
+        food16.put(KEY_UNANALYSED_PORTION, 0)
+        food16.put(
+            KEY_SAMPLING_DETAILS,
+            "The majority of nutrient data were derived from a composite of 3 samples of rice crackers (2x Dainty, Coles, Homebrand, Sakata, Eat Rite) purchased from NT and ACT in 2010. Fat and fatty acids were also derived from 2 samples of plain rice crackers (1x Sakata and 1x Fantastic) purchased in QLD and TAS in 2013. Resistant starch and fibre were derived from a composite of 3 samples of plain rice crackers (1x Woolworths Homebrand, 1x Fantastic and 1x Sakata) purchased in NSW in 2012. Folate and retinol were imputed from rice cakes. Iodine was imputed from white rice. Alcohol, vitamins (folic acid, B12, D), caffeine and cholesterol were imputed zero."
+        )
+        db?.insert(FOOD_TABLE, null, food16)
+        val food17 = ContentValues()
+        food17.put(KEY_FOOD_NAME, "Bread, flat, white, commercial")
+        food17.put(KEY_COMMON_NAME, "")
+        food17.put(
+            KEY_DESCRIPTION,
+            "Flat bread made from white wheat flour. Includes a range of styles, including Lebanese, pita, naan, tortillas, mountain bread and wraps. May vary in diameter. Contains added folic acid, iodised salt and thiamin. Ready to eat."
+        )
+        food17.put(KEY_NITROGEN_FACTOR, 5.7)
+        food17.put(KEY_FAT_FACTOR, 0.89)
+        food17.put(KEY_CALORIES_FACTOR, 30)
+        food17.put(KEY_SPECIFIC_GRAVITY, 0)
+        food17.put(KEY_ANALYSED_PORTION, 100)
+        food17.put(KEY_UNANALYSED_PORTION, 0)
+        food17.put(
+            KEY_SAMPLING_DETAILS,
+            "The majority of nutrients were derived from a composite of 8 samples of flat breads (2x Diego's Tortilla, 1x Bazaar, 1x Woolworths Select, 1x Kobz, 1x Mountain Bread, 1x Wattle Valley soft wraps and 1x unbranded Indian style) purchased nationally in 2010. Folate, folic acid, B1, I, Na and moisture were determined by individual analysis of the same samples. Resistant starch and fibre were derived from a composite of 3 samples of white Lebanese bread (1x Bazaar, 1x Kohbz, and 1x Mission) purchased in NSW in 2012. Cholesterol, beta-carotene, vitamin D, caffeine and alcohol were imputed zero."
+        )
+        db?.insert(FOOD_TABLE, null, food17)
+        val food18 = ContentValues()
+        food18.put(KEY_FOOD_NAME, "Muffin, English style, from white flour")
+        food18.put(KEY_COMMON_NAME, "")
+        food18.put(
+            KEY_DESCRIPTION,
+            "A round yeasted dough made from white wheat flour (approximately 8.5 cm in diameter and 2 cm thick) that has been baked. Contains added folic acid and iodised salt."
+        )
+        food18.put(KEY_NITROGEN_FACTOR, 5.7)
+        food18.put(KEY_FAT_FACTOR, 0.89)
+        food18.put(KEY_CALORIES_FACTOR, 30)
+        food18.put(KEY_SPECIFIC_GRAVITY, 0)
+        food18.put(KEY_ANALYSED_PORTION, 100)
+        food18.put(KEY_UNANALYSED_PORTION, 0)
+        food18.put(
+            KEY_SAMPLING_DETAILS,
+            "The majority of nutrient data including proximates, fatty acids, vitamins (except for folates and B1) and minerals (except for Na and I) were derived from a composite of 8 samples of white English muffins (3x Tip Top, 2x Coles, 1x Wonder White, 1x Mighty Soft and 1x Bakers Life) purchased nationally in 2010. Vitamins (folate, folic acid, B1), Na, I and moisture were determined the 8 individual samples from the same program. Resistant starch and fibre were derived from a composite sample of 3 brands of bread made from white flour (1x Helga's, 1x Mighty Soft and 1x Tip Top) purchased in NSW in 2012. Beta-carotene was imputed from white bread. Alcohol, retinol, vitamin D, caffeine and cholesterol were imputed zero."
+        )
+        db?.insert(FOOD_TABLE, null, food18)
+        val food19 = ContentValues()
+        food19.put(KEY_FOOD_NAME, "Breakfast cereal, flakes of corn, unfortified")
+        food19.put(KEY_COMMON_NAME, "")
+        food19.put(
+            KEY_DESCRIPTION,
+            "Breakfast cereal made from flakes of corn with added salt and sugar. Does not contain added vitamins or minerals."
+        )
+        food19.put(KEY_NITROGEN_FACTOR, 6.25)
+        food19.put(KEY_FAT_FACTOR, 0.9)
+        food19.put(KEY_CALORIES_FACTOR, 25)
+        food19.put(KEY_SPECIFIC_GRAVITY, 0)
+        food19.put(KEY_ANALYSED_PORTION, 100)
+        food19.put(KEY_UNANALYSED_PORTION, 0)
+        food19.put(
+            KEY_SAMPLING_DETAILS,
+            "The majority of nutrient data were derived from a composite of 8 samples of unfortified corn flake-style cereal (2x Freelicious, 1x Unbranded, 2x Macro Organic and 3x Norganic) purchased in the ACT in 2013. Resistant starch and fibre were derived from a composite of 3 samples of rice or corn based breakfast cereal (1x Kellogg's Cornflakes, 1x Kellogg's Rice Bubbles and 1x Sanitarium Skippy Cornflakes) purchased in NSW in 2012. Retinol, B12, vitamin D, caffeine and alcohol were imputed zero."
+        )
+        db?.insert(FOOD_TABLE, null, food19)
+        val food20 = ContentValues()
+        food20.put(KEY_FOOD_NAME, "Cake mix, plain, dry powder")
+        food20.put(KEY_COMMON_NAME, "")
+        food20.put(
+            KEY_DESCRIPTION,
+            "Commercially prepared dry plain cake mix. Typical ingredients include wheat flour, maize starch, sugar, salt, dairy products, vegetable oils, flavours, colours and baking agents. Includes cake mixes labelled as madeira, tea cake or vanilla cake."
+        )
+        food20.put(KEY_NITROGEN_FACTOR, 6.25)
+        food20.put(KEY_FAT_FACTOR, 0.956)
+        food20.put(KEY_CALORIES_FACTOR, 30)
+        food20.put(KEY_SPECIFIC_GRAVITY, 0)
+        food20.put(KEY_ANALYSED_PORTION, 100)
+        food20.put(KEY_UNANALYSED_PORTION, 0)
+        food20.put(
+            KEY_SAMPLING_DETAILS,
+            "The majority of nutrient data were derived from a composite of 8 samples of dry unprepared cake mix (3x White wings, 2x Greens, 1x Betty Crocker, 1x Defiance and 1x Home Brand) purchased in VIC in March 2001. Tryptophan was imputed from plain flour. Alcohol, folic acid, vitamin D and caffeine were imputed zero. Note low sum of proximates - use data with caution."
+        )
+        db?.insert(FOOD_TABLE, null, food20)
+        val food21 = ContentValues()
+        food21.put(KEY_FOOD_NAME, "Cake, chocolate, homemade, iced")
+        food21.put(KEY_COMMON_NAME, "")
+        food21.put(
+            KEY_DESCRIPTION,
+            "Home prepared chocolate cake made from common household ingredients such as flour, butter, sugar, egg, milk and cocoa, with icing."
+        )
+        food21.put(KEY_NITROGEN_FACTOR, 6.25)
+        food21.put(KEY_FAT_FACTOR, 0.956)
+        food21.put(KEY_CALORIES_FACTOR, 30)
+        food21.put(KEY_SPECIFIC_GRAVITY, 0)
+        food21.put(KEY_ANALYSED_PORTION, 100)
+        food21.put(KEY_UNANALYSED_PORTION, 0)
+        food21.put(
+            KEY_SAMPLING_DETAILS,
+            "These nutrient data were derived using a recipe approach. For further information refer to individual ingredients."
+        )
+        db?.insert(FOOD_TABLE, null, food21)
+       val food22 = ContentValues()
+        food22.put(KEY_FOOD_NAME, "Doughnut, jam filled, sugar coated")
+        food22.put(KEY_COMMON_NAME, "")
+        food22.put(
+            KEY_DESCRIPTION,
+            "Batter shaped into a ball which as been deep fried. A small amount of jam is then injected into the centre and the doughnut dusted with sugar and cinnamon."
+        )
+        food22.put(KEY_NITROGEN_FACTOR, 6.25)
+        food22.put(KEY_FAT_FACTOR, 0.956)
+        food22.put(KEY_CALORIES_FACTOR, 30)
+        food22.put(KEY_SPECIFIC_GRAVITY, 0)
+        food22.put(KEY_ANALYSED_PORTION, 100)
+        food22.put(KEY_UNANALYSED_PORTION, 0)
+        food22.put(
+            KEY_SAMPLING_DETAILS,
+            "These nutrient data were derived using a recipe approach. For further information refer to individual ingredients."
+        )
+        db?.insert(FOOD_TABLE, null, food22)
+       val food23 = ContentValues()
+        food23.put(KEY_FOOD_NAME, "Oats, rolled, uncooked")
+        food23.put(KEY_COMMON_NAME, "")
+        food23.put(
+            KEY_DESCRIPTION,
+            "Crushed grain produced by steaming and flattening with hot rollers. No further cooking. Includes traditional and quick cooking styles."
+        )
+        food23.put(KEY_NITROGEN_FACTOR, 6.25)
+        food23.put(KEY_FAT_FACTOR, 0.956)
+        food23.put(KEY_CALORIES_FACTOR, 30)
+        food23.put(KEY_SPECIFIC_GRAVITY, 0)
+        food23.put(KEY_ANALYSED_PORTION, 100)
+        food23.put(KEY_UNANALYSED_PORTION, 0)
+        food23.put(
+            KEY_SAMPLING_DETAILS,
+            "The majority of nutrient data were based on representative samples of Australian rolled oats analysed in 2012 (Grains & Legumes Nutrition Council, 2014) and a composite of 8 samples of unflavoured rolled & quick oats (1x Carmen's, 1x Coles Organic, 1x Coles, 1x Homebrand, 1x Lowan, 1x Organic Road, 1x Quaker and 3x Uncle Toby's) purchased in the ACT in 2013. Starch, individual fatty acids and individual sugars were derived from the 2013 analyses. Individual fatty acids and sugars were adjusted based on totals determined by the Grains & Legumes Nutrition Council in 2014. Caffeine, cholesterol, alcohol, vitamin D and retinol were imputed zero. Note low sum of proximates - data should be used with caution."
+        )
+        db?.insert(FOOD_TABLE, null, food23)
+       val food24 = ContentValues()
+        food24.put(KEY_FOOD_NAME, "Rice, white, boiled or rice cooker, no added salt")
+        food24.put(KEY_COMMON_NAME, "")
+        food24.put(
+            KEY_DESCRIPTION,
+            "Grain that has had its husk, bran and germ removed. Cooked by boiling on the stove top or in an electric rice cooker in unsalted water."
+        )
+        food24.put(KEY_NITROGEN_FACTOR, 6.25)
+        food24.put(KEY_FAT_FACTOR, 0.956)
+        food24.put(KEY_CALORIES_FACTOR, 30)
+        food24.put(KEY_SPECIFIC_GRAVITY, 0)
+        food24.put(KEY_ANALYSED_PORTION, 100)
+        food24.put(KEY_UNANALYSED_PORTION, 0)
+        food24.put(
+            KEY_SAMPLING_DETAILS,
+            "The majority of nutrient data were derived from two analyses: (1) a composite of 8 samples of white rice (2x Sunbeam Medium Grain, 1x Royal Umbrella Jasmine, 1x Sunrice Long Grain, 1x Pandaroo Jasmine, 1x Sunrice Jasmine, 1x Coles Jasmine and 1x Riviana Basmati) purchased in ACT, QLD, VIC, SA and WA in 2015 and prepared in the laboratory using an electric rice cooker; and (2) a composite of 4 samples of long grain rice (Sun Rice, Riviana, Koala and Black and Gold) purchased in NSW, QLD, WA and SA in 2008. Resistant starch and fibre were derived from a composite of 3 samples of white rice (1x Sunrice medium grain, 1x Sunrice jasmine and 1x Koala long grain) purchased in NSW in 2012. Minerals (Cr, Mo, Ni, Se) were derived from 6 samples of white rice purchased in ACT, NSW, SA in 2004. Minerals (As, Cd, Hg, Pb) were derived from 3 composites each of 2 samples of long grain white rice purchased in 3 states in 1996. Minerals (Ca, Mg, P, K, Na, Zn) and tryptophan were calculated from raw white rice. Fatty acids were imputed from raw white rice. Alcohol, caffeine, cholesterol and vitamins (B12, C, D, retinol) were imputed zero."
+        )
+        db?.insert(FOOD_TABLE, null, food24)
+       val food25 = ContentValues()
+        food25.put(KEY_FOOD_NAME, "Pizza, cheese & tomato, commercial")
+        food25.put(KEY_COMMON_NAME, "")
+        food25.put(
+            KEY_DESCRIPTION,
+            "Commercially produced pizza dough topped with tomato-based sauce and cheese. Includes frozen, fast food and takeaway styles."
+        )
+        food25.put(KEY_NITROGEN_FACTOR, 6.25)
+        food25.put(KEY_FAT_FACTOR, 0.956)
+        food25.put(KEY_CALORIES_FACTOR, 30)
+        food25.put(KEY_SPECIFIC_GRAVITY, 0)
+        food25.put(KEY_ANALYSED_PORTION, 100)
+        food25.put(KEY_UNANALYSED_PORTION, 0)
+        food25.put(
+            KEY_SAMPLING_DETAILS,
+            "The majority of nutrient data were derived from a composite of 8 samples of pizzas described as margherita or cheese-topped (2x frozen and reheated (McCains), 4x fast food outlets (Pizza Hut, Dominos) and 2x independent take away food outlets) purchased in Melbourne and Canberra in 2006. Resistant starch and fibre were derived from a composite of 3 samples of frozen margherita pizza (1x McCain, 1x Dr Oetker and 1x Woolworths Select) purchased in NSW in 2012. Vitamins (B1, B2, B3, B6, alpha-tocopherol, beta-carotene), tryptophan, cholesterol and fatty acids were imputed from frozen supreme pizza. B12 was imputed from frozen ham & pineapple pizza. Vitamin D was estimated based on the proportion of cheese. Alcohol, caffeine and folic acid were imputed zero."
+        )
+        db?.insert(FOOD_TABLE, null, food25)
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
@@ -638,7 +908,8 @@ class DatabaseHandler(val context: Context?) :
     @SuppressLint("Range")
     fun viewStepsCal(userid: Int, date: String): Int {
         var totalstep = 0
-        val selectQuery = "SELECT SUM($KEY_STEPS) as Total FROM $STEP_TABLE Where $KEY_STEP_USERID = '" + userid + "' AND $KEY_STEP_DATE ='" + date + "'"
+        val selectQuery =
+            "SELECT SUM($KEY_STEPS) as Total FROM $STEP_TABLE Where $KEY_STEP_USERID = '" + userid + "' AND $KEY_STEP_DATE ='" + date + "'"
         val db = this.readableDatabase
         var cursor: Cursor? = null
         try {
