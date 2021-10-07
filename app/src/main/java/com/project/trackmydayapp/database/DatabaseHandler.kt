@@ -638,7 +638,7 @@ class DatabaseHandler(val context: Context?) :
     @SuppressLint("Range")
     fun viewStepsCal(userid: Int, date: String): Int {
         var totalstep = 0
-        val selectQuery = "SELECT SUM($KEY_STEPS) as Total FROM $STEP_TABLE"
+        val selectQuery = "SELECT SUM($KEY_STEPS) as Total FROM $STEP_TABLE Where $KEY_STEP_USERID = '" + userid + "' AND $KEY_STEP_DATE ='" + date + "'"
         val db = this.readableDatabase
         var cursor: Cursor? = null
         try {
@@ -703,7 +703,8 @@ class DatabaseHandler(val context: Context?) :
     @SuppressLint("Range")
     fun viewRecipeCal(userid: Int, date: String): Int {
         var totalCalories = 0
-        val selectQuery = "SELECT SUM($KEY_RECIPE_CALORIES) as Total FROM $RECIPE_TABLE"
+        val selectQuery =
+            "SELECT SUM($KEY_RECIPE_CALORIES) as Total FROM $RECIPE_TABLE Where $KEY_RECIPE_USERID = '" + userid + "' AND $KEY_RECIPE_DATE ='" + date + "'"
         val db = this.readableDatabase
         var cursor: Cursor? = null
         try {
